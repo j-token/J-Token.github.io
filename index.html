@@ -1,1 +1,1066 @@
-Hello World
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J-token — Full-Stack Developer Portfolio</title>
+  <meta name="description" content="풀스택 개발자 j-token의 포트폴리오. AI 에이전트, 실시간 통신, 게임 개발, 협동로봇 자동화." />
+
+  <style>
+    /* Paperozi (Paperlogy) web font — user-specified */
+    @font-face {
+      font-family: 'Paperozi';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+      font-weight: 100;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Paperozi';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+      font-weight: 200;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Paperozi';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+      font-weight: 300;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Paperozi';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Paperozi';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Paperozi';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Paperozi';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Paperozi';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+      font-weight: 800;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Paperozi';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+      font-weight: 900;
+      font-display: swap;
+    }
+
+    :root {
+      --bg:       #FAFAFA;
+      --fg:       #1D242B;
+      --accent:   #0077C0;
+      --soft:     #C7EEFF;
+      --line:     #DDE7EE;
+      --muted:    rgba(29, 36, 43, 0.60);
+      --muted-2:  rgba(29, 36, 43, 0.12);
+      --sans:     "Paperozi", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --mono:     "Paperozi", Consolas, "Courier New", monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      letter-spacing: -0.005em;
+      /* 한글 어절 단위 줄바꿈 + 긴 영단어/URL도 안전하게 */
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .paper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 56px 120px;
+    }
+
+    /* Header — 서류 상단 */
+    header.masthead {
+      border-top: 2px solid var(--fg);
+      border-bottom: 1px solid var(--line);
+      padding: 24px 0 20px;
+      margin-bottom: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+    }
+    .masthead .title {
+      font-family: var(--sans);
+      font-size: 38px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 6px;
+    }
+    .masthead .subtitle {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .masthead .stamp {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .masthead .stamp .doc-no {
+      display: block;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Section */
+    section {
+      margin-bottom: 56px;
+    }
+    h2 {
+      font-family: var(--sans);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 0 0 22px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    h2 .marker {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+    }
+    h3 {
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 22px 0 8px;
+    }
+    p {
+      margin: 0 0 14px;
+      font-weight: 400;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: text-decoration-thickness 0.12s ease;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    code {
+      font-family: var(--mono);
+      font-size: 0.92em;
+      background: var(--soft);
+      color: var(--accent);
+      padding: 1px 6px;
+      border-radius: 2px;
+    }
+
+    /* Intro paragraph */
+    .lede {
+      font-size: 19px;
+      line-height: 1.75;
+      font-weight: 400;
+    }
+    .lede em {
+      font-style: normal;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Disclosure note — 문서형 인용 블록 */
+    .note {
+      margin-top: 22px;
+      padding: 18px 22px 18px 24px;
+      background: var(--soft);
+      border-left: 3px solid var(--accent);
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--fg);
+      font-weight: 400;
+    }
+    .note .note-label {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .note strong {
+      font-weight: 700;
+    }
+
+    /* Inline role badge (Solo / AI pair) */
+    .role-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    .role-badge.solo {
+      background: var(--fg);
+      color: var(--bg);
+    }
+    .role-badge.pair {
+      background: var(--soft);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    /* Numbered interest list */
+    ol.interests {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: interest;
+    }
+    ol.interests > li {
+      counter-increment: interest;
+      position: relative;
+      padding: 18px 0 18px 52px;
+      border-bottom: 1px solid var(--line);
+    }
+    ol.interests > li:last-child { border-bottom: none; }
+    ol.interests > li::before {
+      content: counter(interest, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 18px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      width: 40px;
+    }
+    ol.interests h3 {
+      margin: 0 0 4px;
+      font-size: 17px;
+    }
+    ol.interests p {
+      margin: 0;
+      color: var(--fg);
+      font-size: 15.5px;
+      line-height: 1.72;
+      font-weight: 400;
+    }
+    ol.interests p .muted {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+    ol.interests p strong {
+      font-weight: 700;
+    }
+
+    /* Project table */
+    table.projects {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      margin: 8px 0;
+    }
+    table.projects th,
+    table.projects td {
+      text-align: left;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    table.projects th {
+      font-family: var(--sans);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      color: var(--muted);
+      border-bottom: 1.5px solid var(--fg);
+    }
+    table.projects td.name {
+      font-family: var(--sans);
+      font-size: 14.5px;
+      font-weight: 600;
+      padding-right: 18px;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    table.projects td.role {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-right: 16px;
+    }
+    table.projects td.role.author {
+      color: var(--accent);
+    }
+    table.projects td.desc {
+      color: var(--fg);
+      font-weight: 400;
+    }
+
+    /* Break Through — game section */
+    .game-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 6px 0 18px;
+    }
+    .chip {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      background: var(--soft);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+    }
+    .chip.dark {
+      background: var(--fg);
+      color: var(--bg);
+      border-color: var(--fg);
+    }
+
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 22px 0 26px;
+    }
+    .screenshots figure {
+      margin: 0;
+    }
+    .screenshots img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+    .screenshots figcaption {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 7px;
+      text-align: center;
+    }
+    /* The 5th screenshot spans both columns to avoid an empty cell */
+    .screenshots figure.wide {
+      grid-column: 1 / -1;
+    }
+
+    .system-list {
+      margin: 14px 0 22px;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .system-list li {
+      padding: 11px 0 11px 22px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      font-size: 15px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    .system-list li::before {
+      content: "§";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .system-list strong {
+      font-weight: 700;
+    }
+
+    .cta-button {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 13px 24px;
+      background: var(--fg);
+      color: var(--bg);
+      text-decoration: none;
+      border: 1px solid var(--fg);
+      margin-top: 6px;
+    }
+    .cta-button:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Tech stack */
+    .stack-group {
+      margin-bottom: 20px;
+    }
+    .stack-group-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .stack-tags {
+      font-family: var(--sans);
+      font-size: 13.5px;
+      font-weight: 500;
+      line-height: 2;
+      color: var(--fg);
+    }
+    .stack-tags .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      margin: 2px 3px 2px 0;
+      border: 1px solid var(--line);
+      background: var(--bg);
+      border-radius: 2px;
+    }
+    .stack-tags .tag.accent {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--soft);
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+    .contact-list li {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 18px;
+    }
+    .contact-list li:last-child { border-bottom: none; }
+    .contact-list .label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .contact-list .value {
+      text-align: right;
+      word-break: break-all;
+    }
+
+    /* Footer — end of document */
+    footer.colophon {
+      margin-top: 72px;
+      padding-top: 24px;
+      border-top: 2px solid var(--fg);
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    footer.colophon .rule {
+      display: inline-block;
+      padding: 0 14px;
+    }
+
+    /* =========================================================
+       Responsive
+       - ≥ 901px  : Desktop (default, max-width 760px paper)
+       - ≤ 900px  : Tablet
+       - ≤ 600px  : Mobile
+       - ≤ 380px  : Small mobile
+       ========================================================= */
+
+    /* Tablet — padding & font size 축소, 레이아웃은 유지 */
+    @media (max-width: 900px) {
+      html, body { font-size: 16.5px; }
+      .paper {
+        padding: 56px 42px 96px;
+      }
+      .masthead .title { font-size: 34px; }
+      h2 { font-size: 22px; }
+      .lede { font-size: 18px; }
+    }
+
+    /* Mobile — 단일 컬럼, 헤더 스택, 테이블/연락처 재배치 */
+    @media (max-width: 600px) {
+      html, body {
+        font-size: 16px;
+        line-height: 1.75;
+      }
+      .paper {
+        padding: 40px 22px 80px;
+      }
+
+      /* Header */
+      header.masthead {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 20px 0 18px;
+        margin-bottom: 44px;
+      }
+      .masthead .title {
+        font-size: 30px;
+        letter-spacing: -0.025em;
+      }
+      .masthead .subtitle { font-size: 11px; }
+      .masthead .stamp {
+        text-align: left;
+        font-size: 10.5px;
+      }
+
+      /* Section headings */
+      section { margin-bottom: 44px; }
+      h2 {
+        font-size: 19px;
+        gap: 10px;
+        padding-bottom: 8px;
+        margin-bottom: 18px;
+      }
+      h2 .marker { font-size: 12px; }
+      h3 { font-size: 16px; }
+
+      /* Intro & disclosure */
+      .lede { font-size: 17px; }
+      .note {
+        padding: 16px 18px;
+        font-size: 14px;
+        line-height: 1.68;
+      }
+
+      /* Interests list */
+      ol.interests > li {
+        padding: 16px 0 16px 40px;
+      }
+      ol.interests > li::before {
+        top: 16px;
+        font-size: 12px;
+        width: 32px;
+      }
+      ol.interests h3 { font-size: 16px; }
+      ol.interests p { font-size: 14.5px; }
+      .role-badge {
+        display: inline-block;
+        margin-left: 6px;
+        font-size: 9px;
+        padding: 2px 6px;
+      }
+
+      /* Selected Work — 테이블을 카드형으로 재구성 */
+      table.projects,
+      table.projects thead,
+      table.projects tbody,
+      table.projects tr,
+      table.projects td,
+      table.projects th {
+        display: block;
+        width: 100%;
+      }
+      table.projects thead { display: none; }
+      table.projects tr {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      table.projects tr:last-child { border-bottom: none; }
+      table.projects td {
+        border: none;
+        padding: 2px 0;
+      }
+      table.projects td.name {
+        font-size: 15px;
+        padding-right: 0;
+        margin-bottom: 2px;
+      }
+      table.projects td.role {
+        font-size: 10px;
+        padding-right: 0;
+        margin-bottom: 4px;
+      }
+      table.projects td.desc {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      /* Game section */
+      .game-meta { gap: 7px; }
+      .chip {
+        font-size: 10px;
+        padding: 4px 9px;
+        letter-spacing: 0.06em;
+      }
+      .screenshots {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin: 20px 0 22px;
+      }
+      .screenshots figure.wide { grid-column: auto; }
+      .screenshots figcaption { font-size: 10.5px; }
+
+      .system-list li {
+        font-size: 14px;
+        padding: 10px 0 10px 20px;
+        line-height: 1.55;
+      }
+      .cta-button {
+        display: block;
+        text-align: center;
+        font-size: 11.5px;
+        padding: 13px 20px;
+      }
+
+      /* Tech stack */
+      .stack-group { margin-bottom: 18px; }
+      .stack-group-label { font-size: 10.5px; }
+      .stack-tags { font-size: 13px; line-height: 1.95; }
+      .stack-tags .tag {
+        padding: 2px 8px;
+        margin: 2px 2px 2px 0;
+      }
+
+      /* Contact — 라벨/값 세로 정렬 */
+      .contact-list li {
+        flex-direction: column;
+        gap: 4px;
+        padding: 12px 0;
+      }
+      .contact-list .label { font-size: 10px; }
+      .contact-list .value {
+        text-align: left;
+        font-size: 14px;
+      }
+
+      footer.colophon {
+        margin-top: 56px;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+      }
+    }
+
+    /* Small mobile — 여백을 더 줄이고 타이틀 축소 */
+    @media (max-width: 380px) {
+      .paper { padding: 32px 16px 64px; }
+      .masthead .title { font-size: 26px; }
+      h2 { font-size: 18px; }
+      .lede { font-size: 16px; }
+      ol.interests > li { padding-left: 34px; }
+      ol.interests > li::before { width: 28px; }
+      .chip { font-size: 9.5px; padding: 3px 8px; }
+      .role-badge {
+        display: inline-block;
+        margin-left: 0;
+        margin-top: 4px;
+      }
+    }
+
+    /* Print — 종이 서류 출력 시 흑백·장식 최소화 */
+    @media print {
+      html, body { background: #fff; font-size: 12pt; }
+      .paper { max-width: none; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      .cta-button,
+      footer.colophon { display: none; }
+      .note { background: #fff; border: 1px solid #000; }
+      .screenshots img { border: 1px solid #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper">
+
+    <header class="masthead">
+      <div>
+        <h1 class="title">j-token</h1>
+        <div class="subtitle">Full-Stack Developer · Portfolio Document</div>
+      </div>
+      <div class="stamp">
+        <span class="doc-no">Doc. No. JT-2026-04</span>
+        <span>Revision 02</span>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- § 1. About -->
+      <section id="about">
+        <h2><span class="marker">§ 1</span>About</h2>
+        <p class="lede">
+          문제 해결을 위해 <em>협업의 가치</em>와 <em>기술적 깊이</em>를 중요하게 생각하는 풀스택 개발자입니다.
+          LLM이 세상에 막 나왔을 때부터 로컬 AI 서비스를 직접 운영해 왔고<br />
+          요즘은 AI 에이전트 도구를 직접 만드는 일에 몰두하고 있습니다.
+        </p>
+        <p class="lede">재미있어 보이는 건 참을 수 없습니다.</p>
+        <div class="note">
+          <span class="note-label">Disclosure</span>
+          이 문서에 등장하는 프로젝트 중<br /><strong>RB-Ware의 로봇 제어 구현(§ 4)을 제외한<br />모든 작업은 AI 코딩 파트너(Claude · GPT · Codex · opencode)와 함께 만들어졌습니다.</strong><br />
+          AI는 제가 가장 잘 쓰는 도구이고, 결과물의 품질과 의사결정에 대한 책임은 <strong>제가 집니다.</strong>
+        </div>
+      </section>
+
+      <!-- § 2. Interests -->
+      <section id="interests">
+        <h2><span class="marker">§ 2</span>Interests</h2>
+        <ol class="interests">
+          <li>
+            <h3>AI 에이전트 &amp; 로컬 LLM</h3>
+            <p>
+              2022년 ChatGPT 등장 이후 <strong>로컬 LLM × text2sql</strong> 서비스를 개인 사업으로 운영.<br />
+              RWKV-4, LLaMA 1·2 등 당시 공개된 모델을 실제 프로덕션에 접목.
+              <span class="muted">오픈소스 기여로 <code>alasdairforsythe/tokenmonster</code>(Go SOTA 토크나이저), <code>backnotprop/plannotator</code>(에이전트 계획·리뷰 도구)에 PR을 보냈고,<br /> 최근에는 codex-mcp / codex-plugin / claude-agent-mcp / easy-opencode / dm-plz 등 MCP 생태계 도구를 직접 제작합니다.</span>
+            </p>
+          </li>
+          <li>
+            <h3>풀스택 TypeScript</h3>
+            <p>
+              NestJS · React / Next.js · React Native / Expo · SvelteKit.
+              <span class="muted">판도플랫폼 Gen AI 베리어프리 키오스크, 엔피엘솔루션 Better Auth 시스템,<br />플레이모어 아미고 앱 결제·홈페이지 리뉴얼에서 실무 적용.</span>
+            </p>
+          </li>
+          <li>
+            <h3>실시간 통신 &amp; 접근성</h3>
+            <p>
+              WebRTC · LiveKit · RTSP · PTZ.
+              <span class="muted">티와이이엔지에서 Go + WebRTC로 RTSP 카메라 지연 30초 → 1초 단축.<br />개인 외주 사업으로 pion(Go WebRTC 프레임워크) 기반 rtsp2webrtc 구현 및 PTZ 카메라 원격 제어.</span>
+            </p>
+          </li>
+          <li>
+            <h3>협동로봇 &amp; 산업 자동화<span class="role-badge solo">Solo Build</span></h3>
+            <p>
+              <strong>RB-Ware (한국 협동로봇 용접 자동화 1위, 레인보우로보틱스 파트너)</strong>에서 Flutter로 로봇 조작 앱, Unity로 티칭·시뮬레이션 UI 개발.
+              <span class="muted">로봇 ↔ 컨트롤러 간 TCP / MQTT 실시간 통신 프로토콜 직접 구현.<br />본 포트폴리오에서 <strong>유일한 AI 비개입 구현</strong>.</span>
+            </p>
+          </li>
+          <li>
+            <h3>인증 &amp; OAuth 통합</h3>
+            <p>
+              Better Auth + NestJS + PostgreSQL 기반 네이버·카카오·구글 연동.
+              <span class="muted">Supabase 네이버 커스텀 OAuth 프로바이더(<code>supabase-custom-oauth-test</code>) 공개.</span>
+            </p>
+          </li>
+          <li>
+            <h3>게임 개발</h3>
+            <p>
+              Unity 6.3 URP 기반 3D 타이밍 카운터 액션 게임 <strong>Break Through</strong> 개발.
+              <span class="muted">상세는 § 4 참조.</span>
+            </p>
+          </li>
+          <li>
+            <h3>AI × 금융</h3>
+            <p>
+              <code>Cryptocurrency_with_ai</code> — FastAPI + AI 자동매매 실험.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- § 3. Selected Work -->
+      <section id="work">
+        <h2><span class="marker">§ 3</span>Selected Work</h2>
+        <table class="projects">
+          <thead>
+            <tr><th>Project</th><th>Role</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/easy-opencode">easy-opencode</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">opencode를 쉽게 시작하기 위한 LSP + AST-grep 플러그인 번들</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/codex-mcp">codex-mcp</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">OpenAI Codex SDK 기반 MCP 서버 — ChatGPT OAuth 로그인, API 키 불필요</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/codex-plugin">codex-plugin</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">Claude Code용 OpenAI Codex 통합 플러그인 (구조화 JSON 출력)</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/claude-agent-mcp">claude-agent-mcp</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">Claude Agent SDK를 래핑한 MCP 서버</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/dm-plz">dm-plz</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">Telegram / Discord로 Claude Code 알림을 전달하는 MCP</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/alasdairforsythe/tokenmonster">alasdairforsythe/tokenmonster</a></td>
+              <td class="role">Contributor (PR)</td>
+              <td class="desc">Go 기반 SOTA 토크나이저 — 로컬 LLM × text2sql 시기 기여</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/backnotprop/plannotator">backnotprop/plannotator</a></td>
+              <td class="role">Contributor (PR)</td>
+              <td class="desc">AI 코딩 에이전트 계획·코드 리뷰 도구</td>
+            </tr>
+            <tr>
+              <td class="name">Break Through</td>
+              <td class="role author">Author</td>
+              <td class="desc">Unity 6.3 URP 3D 타이밍 카운터 액션 (§ 4 참조)</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/Cryptocurrency_with_ai">Cryptocurrency_with_ai</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">FastAPI + AI 자동매매 실험</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- § 4. Game — Break Through -->
+      <section id="game">
+        <h2><span class="marker">§ 4</span>Game — Break Through</h2>
+        <p>
+          Unity 6.3 URP 기반 3D 타이밍 카운터 액션 게임.
+          흑백 픽셀 아웃라인 스타일을 커스텀 셰이더로 구현했습니다.
+        </p>
+
+        <div class="game-meta">
+          <span class="chip">Unity 6.3</span>
+          <span class="chip">URP</span>
+          <span class="chip">C#</span>
+          <span class="chip">ShaderGraph</span>
+          <span class="chip">Aseprite</span>
+          <span class="chip dark">Action</span>
+          <span class="chip dark">HTML5</span>
+        </div>
+
+        <div class="screenshots">
+          <figure>
+            <img src="assets/screenshots/break-through-title.png" alt="Break Through — 타이틀 화면, BREAK THROUGH 로고와 START 버튼, 기본 자세의 플레이어 캐릭터" loading="lazy" />
+            <figcaption>Fig. 1 — Title Screen</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/break-through-round1.png" alt="Break Through — ROUND 1 오버레이 아래에서 플레이어가 적과 대치하는 장면" loading="lazy" />
+            <figcaption>Fig. 2 — Round Start</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/break-through-combat.png" alt="Break Through — 실제 전투 장면, 실루엣 플레이어가 파편을 흩뿌리며 이동" loading="lazy" />
+            <figcaption>Fig. 3 — Combat &amp; Debris</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/break-through-game-over.png" alt="Break Through — GAME OVER, REACHED ROUND 1 텍스트와 RESTART 버튼" loading="lazy" />
+            <figcaption>Fig. 4 — Game Over</figcaption>
+          </figure>
+          <figure class="wide">
+            <img src="assets/screenshots/break-through-punch.png" alt="Break Through — 플레이어가 펀치를 내지르며 오브젝트 파편이 비산하는 장면" loading="lazy" />
+            <figcaption>Fig. 5 — Punch &amp; Shatter Effect</figcaption>
+          </figure>
+        </div>
+
+        <h3>주요 시스템</h3>
+        <ul class="system-list">
+          <li><strong>GameManager</strong> — 단일 씬 상태머신 (Title → Fighting → Choosing → Dying → GameOver)</li>
+          <li><strong>PlayerCombat</strong> — 3단 콤보 상태머신, 애니메이션 이벤트 릴레이 패턴으로 Animator ↔ 전투 코드 분리</li>
+          <li><strong>DebrisPool</strong> — 인덱스 기반 오브젝트 풀링으로 구현</li>
+          <li><strong>PixelOutlineFeature</strong> — 커스텀 URP ScriptableRendererFeature. ToonCrack·Dither 셰이더로 레트로 픽셀 아웃라인 렌더링</li>
+        </ul>
+
+        <a href="https://j-token.itch.io/break-through" class="cta-button" target="_blank" rel="noopener">▸ Play on itch.io</a>
+      </section>
+
+      <!-- § 5. Tech Stack -->
+      <section id="stack">
+        <h2><span class="marker">§ 5</span>Tech Stack</h2>
+
+        <div class="stack-group">
+          <span class="stack-group-label">Languages</span>
+          <div class="stack-tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Go</span>
+            <span class="tag">Rust</span>
+            <span class="tag">C#</span>
+            <span class="tag">C++</span>
+            <span class="tag">Dart</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <span class="stack-group-label">Frontend</span>
+          <div class="stack-tags">
+            <span class="tag">React</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">React Native</span>
+            <span class="tag">Expo</span>
+            <span class="tag">SvelteKit</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Electron</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <span class="stack-group-label">Backend</span>
+          <div class="stack-tags">
+            <span class="tag">NestJS</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Express</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <span class="stack-group-label">Realtime &amp; Protocols</span>
+          <div class="stack-tags">
+            <span class="tag">WebRTC (pion)</span>
+            <span class="tag">LiveKit</span>
+            <span class="tag">MQTT</span>
+            <span class="tag">TCP</span>
+            <span class="tag">WebSocket</span>
+            <span class="tag">RTSP</span>
+            <span class="tag">PTZ</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <span class="stack-group-label">Data &amp; Infra</span>
+          <div class="stack-tags">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">AWS</span>
+            <span class="tag">GCP</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <span class="stack-group-label">Auth</span>
+          <div class="stack-tags">
+            <span class="tag">Better Auth</span>
+            <span class="tag">OAuth (Naver / Kakao / Google)</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <span class="stack-group-label">Game &amp; Graphics</span>
+          <div class="stack-tags">
+            <span class="tag">Unity 6.3</span>
+            <span class="tag">URP</span>
+            <span class="tag">ShaderGraph</span>
+            <span class="tag">Aseprite</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <span class="stack-group-label">AI Tools</span>
+          <div class="stack-tags">
+            <span class="tag ">Claude</span>
+            <span class="tag ">GPT / Codex</span>
+            <span class="tag ">opencode</span>
+            <span class="tag ">MCP</span>
+            <span class="tag">RWKV</span>
+            <span class="tag">LLaMA</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- § 6. Contact -->
+      <section id="contact">
+        <h2><span class="marker">§ 6</span>Contact</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="label">GitHub</span>
+            <span class="value"><a href="https://github.com/j-token">github.com/j-token</a></span>
+          </li>
+          <li>
+            <span class="label">Blog</span>
+            <span class="value"><a href="https://i-love-coding.tistory.com/">i-love-coding.tistory.com</a></span>
+          </li>
+          <li>
+            <span class="label">Game</span>
+            <span class="value"><a href="https://j-token.itch.io/break-through">j-token.itch.io/break-through</a></span>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer class="colophon">
+      <span class="rule">— end of document —</span>
+    </footer>
+
+  </div>
+</body>
+</html>
