@@ -95,29 +95,29 @@
     }
 
     .paper {
-      max-width: 760px;
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 72px 56px 120px;
+      padding: 88px 72px 140px;
     }
 
     /* Header — 서류 상단 */
     header.masthead {
       border-top: 2px solid var(--fg);
       border-bottom: 1px solid var(--line);
-      padding: 24px 0 20px;
-      margin-bottom: 56px;
+      padding: 32px 0 28px;
+      margin-bottom: 88px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      gap: 24px;
+      gap: 48px;
     }
     .masthead .title {
       font-family: var(--sans);
-      font-size: 38px;
-      line-height: 1.05;
+      font-size: 56px;
+      line-height: 1;
       font-weight: 800;
-      letter-spacing: -0.02em;
-      margin: 0 0 6px;
+      letter-spacing: -0.025em;
+      margin: 0 0 10px;
     }
     .masthead .subtitle {
       font-family: var(--sans);
@@ -143,29 +143,50 @@
       font-weight: 600;
     }
 
-    /* Section */
+    /* Section — 2 컬럼 문서 레이아웃
+       왼쪽: sticky 섹션 헤더(§ 넘버 + 제목)
+       오른쪽: 본문 */
     section {
-      margin-bottom: 56px;
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      column-gap: 64px;
+      margin-bottom: 88px;
+      align-items: start;
+    }
+    section > * { min-width: 0; }
+    section > *:not(h2) {
+      grid-column: 2;
     }
     h2 {
+      grid-column: 1;
+      grid-row: 1 / span 99;
+      position: sticky;
+      top: 40px;
+      align-self: start;
       font-family: var(--sans);
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      margin: 0 0 22px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--line);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0;
+      padding: 0 24px 0 0;
+      border-right: 1px solid var(--line);
+      border-bottom: none;
       display: flex;
-      align-items: baseline;
-      gap: 12px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.15;
     }
     h2 .marker {
       font-family: var(--sans);
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 700;
       color: var(--accent);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       flex-shrink: 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--accent);
     }
     h3 {
       font-family: var(--sans);
@@ -263,14 +284,17 @@
       padding: 0;
       margin: 0;
       counter-reset: interest;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 40px;
     }
     ol.interests > li {
       counter-increment: interest;
       position: relative;
-      padding: 18px 0 18px 52px;
+      padding: 20px 0 20px 52px;
       border-bottom: 1px solid var(--line);
     }
-    ol.interests > li:last-child { border-bottom: none; }
+    /* 2열 그리드에서 마지막 두 항목의 border 제거는 불가능하므로 전체 유지 */
     ol.interests > li::before {
       content: counter(interest, decimal-leading-zero);
       position: absolute;
@@ -379,9 +403,9 @@
 
     .screenshots {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin: 22px 0 26px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 24px 0 30px;
     }
     .screenshots figure {
       margin: 0;
@@ -403,10 +427,8 @@
       margin-top: 7px;
       text-align: center;
     }
-    /* The 5th screenshot spans both columns to avoid an empty cell */
-    .screenshots figure.wide {
-      grid-column: 1 / -1;
-    }
+    /* 5번째 스크린샷 — 3열 데스크탑에서는 그냥 일반 셀 */
+    .screenshots figure.wide { grid-column: auto; }
 
     .system-list {
       margin: 14px 0 22px;
@@ -455,8 +477,15 @@
     }
 
     /* Tech stack */
+    .stack-body {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 48px;
+      row-gap: 4px;
+    }
     .stack-group {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      break-inside: avoid;
     }
     .stack-group-label {
       font-family: var(--sans);
@@ -495,18 +524,20 @@
       padding: 0;
       margin: 0;
       font-family: var(--sans);
-      font-size: 14.5px;
+      font-size: 15px;
       font-weight: 500;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 32px;
     }
     .contact-list li {
-      padding: 13px 0;
+      padding: 18px 0;
       border-bottom: 1px solid var(--line);
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 18px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
     }
-    .contact-list li:last-child { border-bottom: none; }
     .contact-list .label {
       color: var(--muted);
       font-size: 11px;
@@ -516,8 +547,9 @@
       flex-shrink: 0;
     }
     .contact-list .value {
-      text-align: right;
+      text-align: left;
       word-break: break-all;
+      font-size: 15px;
     }
 
     /* Footer — end of document */
@@ -540,11 +572,42 @@
 
     /* =========================================================
        Responsive
-       - ≥ 901px  : Desktop (default, max-width 760px paper)
+       - ≥ 1100px : Wide desktop (2-col 섹션 + multi-col 내부)
+       - ≤ 1100px : Narrow desktop — 섹션 단일 컬럼 복귀
        - ≤ 900px  : Tablet
        - ≤ 600px  : Mobile
        - ≤ 380px  : Small mobile
        ========================================================= */
+
+    /* Narrow desktop — 2열 섹션 해제, 내부 멀티컬럼 유지 */
+    @media (max-width: 1100px) {
+      .paper {
+        max-width: 880px;
+        padding: 72px 56px 120px;
+      }
+      section {
+        display: block;
+        margin-bottom: 64px;
+      }
+      section > *:not(h2) { grid-column: auto; }
+      h2 {
+        position: static;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 12px;
+        padding: 0 0 10px;
+        margin: 0 0 24px;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        font-size: 24px;
+      }
+      h2 .marker {
+        padding-bottom: 0;
+        border-bottom: none;
+        font-size: 12px;
+      }
+      .masthead .title { font-size: 42px; }
+    }
 
     /* Tablet — padding & font size 축소, 레이아웃은 유지 */
     @media (max-width: 900px) {
@@ -552,9 +615,21 @@
       .paper {
         padding: 56px 42px 96px;
       }
-      .masthead .title { font-size: 34px; }
+      .masthead .title { font-size: 36px; }
       h2 { font-size: 22px; }
       .lede { font-size: 18px; }
+      ol.interests {
+        display: block;
+      }
+      .screenshots {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stack-body {
+        display: block;
+      }
+      .contact-list {
+        display: block;
+      }
     }
 
     /* Mobile — 단일 컬럼, 헤더 스택, 테이블/연락처 재배치 */
@@ -863,6 +938,16 @@
               <td class="desc">Telegram / Discord로 Claude Code 알림을 전달하는 MCP</td>
             </tr>
             <tr>
+              <td class="name"><a href="https://github.com/j-token/play-tag">play-tag</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">경도 — Flutter + BLE 기반 오프라인 팀 감지 술래잡기 앱 (Supabase Realtime)</td>
+            </tr>
+            <tr>
+              <td class="name">RTA(비공개)</td>
+              <td class="role author">Author</td>
+              <td class="desc">Real-Time Audio Translator — Electron + Soniox로 시스템 오디오 실시간 번역/자막 오버레이</td>
+            </tr>
+            <tr>
               <td class="name"><a href="https://github.com/alasdairforsythe/tokenmonster">alasdairforsythe/tokenmonster</a></td>
               <td class="role">Contributor (PR)</td>
               <td class="desc">Go 기반 SOTA 토크나이저 — 로컬 LLM × text2sql 시기 기여</td>
@@ -941,6 +1026,7 @@
       <!-- § 5. Tech Stack -->
       <section id="stack">
         <h2><span class="marker">§ 5</span>Tech Stack</h2>
+        <div class="stack-body">
 
         <div class="stack-group">
           <span class="stack-group-label">Languages</span>
@@ -1009,7 +1095,7 @@
           <span class="stack-group-label">Auth</span>
           <div class="stack-tags">
             <span class="tag">Better Auth</span>
-            <span class="tag">OAuth (Naver / Kakao / Google)</span>
+            <span class="tag">Supabase OAuth (Naver / Kakao / Google)</span>
           </div>
         </div>
 
@@ -1030,9 +1116,9 @@
             <span class="tag ">GPT / Codex</span>
             <span class="tag ">opencode</span>
             <span class="tag ">MCP</span>
-            <span class="tag">RWKV</span>
-            <span class="tag">LLaMA</span>
+            <span class="tag ">SKILL</span>
           </div>
+        </div>
         </div>
       </section>
 
