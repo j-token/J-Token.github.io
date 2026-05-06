@@ -416,6 +416,11 @@
       display: block;
       border: 1px solid var(--line);
       background: #ffffff;
+      cursor: zoom-in;
+      transition: filter 0.18s ease;
+    }
+    .screenshots img:hover {
+      filter: brightness(1.04);
     }
     .screenshots figcaption {
       font-family: var(--sans);
@@ -429,6 +434,91 @@
     }
     /* 5번째 스크린샷 — 3열 데스크탑에서는 그냥 일반 셀 */
     .screenshots figure.wide { grid-column: auto; }
+
+    /* 라이트박스 — 이미지 클릭 시 확대 보기 */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(29, 36, 43, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      cursor: zoom-out;
+      animation: lightboxFadeIn 0.18s ease-out;
+    }
+    @keyframes lightboxFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .lightbox-overlay .lightbox-image {
+      max-width: 95vw;
+      max-height: 90vh;
+      object-fit: contain;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+      cursor: default;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--fg);
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-family: var(--sans);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transition: background 0.15s ease;
+    }
+    .lightbox-close:hover {
+      background: #ffffff;
+    }
+    .lightbox-original {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent);
+      color: #ffffff;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-family: var(--sans);
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      transition: background 0.15s ease, transform 0.15s ease;
+      cursor: pointer;
+    }
+    .lightbox-original:hover {
+      background: #005a96;
+      transform: translateY(-1px);
+    }
+    body.lightbox-open {
+      overflow: hidden;
+    }
+    @media (max-width: 600px) {
+      .lightbox-overlay { padding: 16px; }
+      .lightbox-original {
+        bottom: 16px;
+        right: 16px;
+        padding: 9px 14px;
+        font-size: 11.5px;
+      }
+      .lightbox-close { top: 12px; right: 12px; }
+    }
 
     .system-list {
       margin: 14px 0 22px;
@@ -1131,6 +1221,11 @@
               <td class="desc">Unity 6.3 URP 3D 타이밍 카운터 액션 (§ 4 참조)</td>
             </tr>
             <tr>
+              <td class="name"><a href="https://abyssal-moonlight-production.up.railway.app/ko" target="_blank" rel="noopener">Abyssal Moonlight</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">Next.js 16 + Live2D + 다국어 CMS를 갖춘 인디 게임 팬사이트 (§ 5 참조)</td>
+            </tr>
+            <tr>
               <td class="name"><a href="https://github.com/j-token/Cryptocurrency_with_ai">Cryptocurrency_with_ai</a></td>
               <td class="role author">Author</td>
               <td class="desc">FastAPI + AI 자동매매 실험</td>
@@ -1191,9 +1286,68 @@
         <a href="https://j-token.itch.io/break-through" class="cta-button" target="_blank" rel="noopener">▸ Play on itch.io</a>
       </section>
 
-      <!-- § 5. Tech Stack -->
+      <!-- § 5. Web — Abyssal Moonlight -->
+      <section id="abyssal-moonlight">
+        <h2><span class="marker">§ 5</span>Web — Abyssal Moonlight</h2>
+        <p>
+          인디 게임 <em>深海月光 (Abyssal Moonlight)</em>의 비공식 팬사이트.
+          Next.js 16 App Router 기반 SSR, 한·영·일 다국어 동적 라우팅,
+          슬롯 단위로 카피·이미지를 실시간 편집하는 어드민 CMS, PixiJS와
+          Cubism Core로 구동되는 Live2D 캐릭터 스테이지를 한 코드베이스에 묶었습니다.
+        </p>
+
+        <div class="game-meta">
+          <span class="chip">Next.js 16</span>
+          <span class="chip">React 19</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind v4</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Drizzle ORM</span>
+          <span class="chip">better-auth</span>
+          <span class="chip">PixiJS · Live2D</span>
+          <span class="chip dark">Full-stack</span>
+          <span class="chip dark">Railway · Docker</span>
+        </div>
+
+        <div class="screenshots">
+          <figure>
+            <img src="assets/screenshots/abyssal-moonlight-hero.png" alt="Abyssal Moonlight — 한국어(/ko) 메인 히어로 섹션, '심해의 도시, 어비사리아.' 헤드라인과 프롤로그 CTA 버튼" loading="lazy" />
+            <figcaption>Fig. 1 — Hero (ko)</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/abyssal-moonlight-live2d.png" alt="Abyssal Moonlight — 카렌(Calen) 캐릭터의 Live2D 모델이 메인 스테이지에서 렌더링되는 모습" loading="lazy" />
+            <figcaption>Fig. 2 — Live2D Stage</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/abyssal-moonlight-characters.png" alt="Abyssal Moonlight — 주요 캐릭터(카렌·시온) 카드가 나열된 Characters 섹션" loading="lazy" />
+            <figcaption>Fig. 3 — Characters</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/abyssal-moonlight-i18n.png" alt="Abyssal Moonlight — 같은 페이지의 일본어(/ja) 버전, 言語 스위처와 일본어 카피로 다국어 SSR 결과 표시" loading="lazy" />
+            <figcaption>Fig. 4 — i18n (ja)</figcaption>
+          </figure>
+          <figure class="wide">
+            <img src="assets/screenshots/abyssal-moonlight-admin.png" data-original-src="assets/screenshots/abyssal-moonlight-admin-original.png" alt="Abyssal Moonlight — 어드민 CMS 대시보드. Hero 헤드라인·서브라인 등 슬롯별로 한·영·일 다국어 텍스트와 마크다운을 편집하는 카드형 폼이 나열된 화면" loading="lazy" />
+            <figcaption>Fig. 5 — Admin CMS</figcaption>
+          </figure>
+        </div>
+
+        <h3>주요 시스템</h3>
+        <ul class="system-list">
+          <li><strong>i18n Routing</strong> — App Router 동적 세그먼트 <code>app/[locale]/…</code>로 한·영·일 SSR 분기, 언어 스위처 + 쿠키 기반 선호도 저장</li>
+          <li><strong>Slot-based CMS</strong> — <code>content</code> 테이블 복합 PK (<code>key</code> + <code>locale</code>)로 다국어 카피·마크다운·이미지·JSON을 슬롯 단위로 관리. DB가 비어 있어도 코드의 <code>defaultValues</code>로 자동 폴백</li>
+          <li><strong>Admin Auth</strong> — better-auth 이메일·비밀번호 + 세션 쿠키, <code>ADMIN_EMAILS</code> 화이트리스트로 어드민 라우트 가드. 변경 이력은 <code>updatedBy</code> FK로 추적</li>
+          <li><strong>Live2D Stage</strong> — PixiJS v7 + <code>pixi-live2d-display-mulmotion</code>. Cubism Core는 라이선스상 npm 재배포 불가이므로 CDN 동적 로드</li>
+          <li><strong>Media Pipeline</strong> — 어드민 업로드 → AWS SDK → Railway Storage(S3 호환) → 공개 URL → SSR 다음 요청부터 즉시 반영</li>
+          <li><strong>Deploy</strong> — Node 22-Alpine 멀티스테이지 Dockerfile + Next.js standalone 출력, Railway에서 Postgres·Storage 환경변수 자동 주입</li>
+        </ul>
+
+        <a href="https://abyssal-moonlight-production.up.railway.app/ko" class="cta-button" target="_blank" rel="noopener">▸ View Live Site</a>
+      </section>
+
+      <!-- § 6. Tech Stack -->
       <section id="stack">
-        <h2><span class="marker">§ 5</span>Tech Stack</h2>
+        <h2><span class="marker">§ 6</span>Tech Stack</h2>
         <div class="stack-body">
 
         <div class="stack-group">
@@ -1253,8 +1407,10 @@
             <span class="tag">PostgreSQL</span>
             <span class="tag">MongoDB</span>
             <span class="tag">Supabase</span>
+            <span class="tag">Drizzle ORM</span>
             <span class="tag">AWS</span>
             <span class="tag">GCP</span>
+            <span class="tag">Railway</span>
             <span class="tag">Docker</span>
           </div>
         </div>
@@ -1290,9 +1446,9 @@
         </div>
       </section>
 
-      <!-- § 6. Contact -->
+      <!-- § 7. Contact -->
       <section id="contact">
-        <h2><span class="marker">§ 6</span>Contact</h2>
+        <h2><span class="marker">§ 7</span>Contact</h2>
         <ul class="contact-list">
           <li>
             <span class="label">GitHub</span>
@@ -1375,19 +1531,110 @@
       } else {
         document.body.classList.remove('hide-print-images');
       }
-      
+
       printOptions.classList.remove('show');
-      
+
       // Delay slightly so UI updates and menu hides properly
       setTimeout(() => {
         window.print();
-        
+
         // Ensure class is removed after printing for regular viewing
         setTimeout(() => {
           document.body.classList.remove('hide-print-images');
         }, 1000);
       }, 150);
     }
+
+    // 3. Lightbox — 스크린샷 클릭 시 확대 보기 + 원본 이미지 새 탭 열기
+    (function setupLightbox() {
+      // 스크린샷 그리드 안의 모든 이미지를 라이트박스 트리거로 등록
+      const imgs = document.querySelectorAll('.screenshots img');
+      if (!imgs.length) return;
+
+      let activeOverlay = null;
+
+      // 라이트박스 닫기 — DOM에서 제거하고 키 핸들러 해제, body 스크롤 복원
+      function closeLightbox() {
+        if (!activeOverlay) return;
+        document.removeEventListener('keydown', onKeydown);
+        activeOverlay.remove();
+        activeOverlay = null;
+        document.body.classList.remove('lightbox-open');
+      }
+
+      // ESC 키로 닫기 지원
+      function onKeydown(e) {
+        if (e.key === 'Escape') closeLightbox();
+      }
+
+      // 라이트박스 열기 — 클릭한 이미지를 확대해 보여주고
+      // 우측 하단 플로팅 버튼으로 원본 이미지(자기 자신 또는 data-original-src)를 새 탭에서 열게 함
+      function openLightbox(img) {
+        // 이미 열려 있다면 먼저 정리 (이중 진입 방지)
+        if (activeOverlay) closeLightbox();
+
+        // data-original-src가 있으면 그것을, 없으면 표시된 src를 원본으로 사용
+        const originalSrc = img.dataset.originalSrc || img.currentSrc || img.src;
+
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-label', '확대 이미지 보기');
+
+        // 확대 이미지 — 클릭 이벤트 차단해서 오버레이 닫힘 방지
+        const big = document.createElement('img');
+        big.className = 'lightbox-image';
+        big.src = img.currentSrc || img.src;
+        big.alt = img.alt || '';
+        big.addEventListener('click', (e) => e.stopPropagation());
+
+        // 닫기 버튼
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'lightbox-close';
+        closeBtn.type = 'button';
+        closeBtn.setAttribute('aria-label', '닫기');
+        closeBtn.textContent = '×';
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          closeLightbox();
+        });
+
+        // 우측 하단 플로팅 버튼 — 원본 이미지를 새 탭에서 열기
+        const original = document.createElement('a');
+        original.className = 'lightbox-original';
+        original.href = originalSrc;
+        original.target = '_blank';
+        original.rel = 'noopener';
+        original.textContent = '▸ 원본 이미지';
+        original.addEventListener('click', (e) => e.stopPropagation());
+
+        // 배경 클릭 시 닫기 (이미지/버튼 클릭은 stopPropagation으로 보호됨)
+        overlay.addEventListener('click', closeLightbox);
+
+        overlay.appendChild(big);
+        overlay.appendChild(closeBtn);
+        overlay.appendChild(original);
+        document.body.appendChild(overlay);
+        document.body.classList.add('lightbox-open');
+        activeOverlay = overlay;
+
+        document.addEventListener('keydown', onKeydown);
+      }
+
+      imgs.forEach((img) => {
+        // 키보드 접근성을 위한 role/tabindex 부여
+        img.setAttribute('role', 'button');
+        img.setAttribute('tabindex', '0');
+        img.addEventListener('click', () => openLightbox(img));
+        img.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(img);
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
