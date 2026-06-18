@@ -291,14 +291,14 @@
     ol.interests > li {
       counter-increment: interest;
       position: relative;
-      padding: 20px 0 20px 52px;
+      padding: 20px 18px 20px 64px;
       border-bottom: 1px solid var(--line);
     }
     /* 2열 그리드에서 마지막 두 항목의 border 제거는 불가능하므로 전체 유지 */
     ol.interests > li::before {
       content: counter(interest, decimal-leading-zero);
       position: absolute;
-      left: 0;
+      left: 16px;
       top: 18px;
       font-family: var(--sans);
       font-size: 13px;
@@ -924,9 +924,10 @@
 
       /* Interests list */
       ol.interests > li {
-        padding: 16px 0 16px 40px;
+        padding: 16px 14px 16px 52px;
       }
       ol.interests > li::before {
+        left: 12px;
         top: 16px;
         font-size: 12px;
         width: 32px;
@@ -1037,7 +1038,7 @@
       .masthead .title { font-size: 26px; }
       h2 { font-size: 18px; }
       .lede { font-size: 16px; }
-      ol.interests > li { padding-left: 34px; }
+      ol.interests > li { padding-left: 46px; }
       ol.interests > li::before { width: 28px; }
       .chip { font-size: 9.5px; padding: 3px 8px; }
       .role-badge {
