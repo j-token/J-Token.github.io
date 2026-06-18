@@ -375,6 +375,32 @@
       color: var(--fg);
       font-weight: 400;
     }
+    /* Category group row inside the projects table — 서류의 소항목 구분 */
+    table.projects tr.group td {
+      padding: 26px 10px 7px;
+      border-bottom: 1.5px solid var(--fg);
+    }
+    table.projects tbody tr.group:first-child td {
+      padding-top: 4px;
+    }
+    table.projects tr.group .cat {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    table.projects tbody tr.group:hover {
+      background: transparent;
+    }
+    /* Private 프로젝트 — 링크 없는 이름은 살짝 톤다운 */
+    table.projects td.name .private-name {
+      color: var(--fg);
+    }
+    table.projects td.role.priv {
+      color: var(--muted);
+    }
 
     /* Break Through — game section */
     .game-meta {
@@ -1083,8 +1109,8 @@
         <div class="subtitle">Full-Stack Developer · Portfolio Document</div>
       </div>
       <div class="stamp">
-        <span class="doc-no">Doc. No. JT-2026-04</span>
-        <span>Revision 02</span>
+        <span class="doc-no">Doc. No. JT-2026-05</span>
+        <span>Revision 03</span>
       </div>
     </header>
 
@@ -1101,7 +1127,7 @@
         <p class="lede">재미있어 보이는 건 참을 수 없습니다.</p>
         <div class="note">
           <span class="note-label">Disclosure</span>
-          이 문서에 등장하는 프로젝트 중<br /><strong>RB-Ware의 로봇 제어 구현(§ 4)을 제외한<br />모든 작업은 AI 코딩 파트너(Claude · GPT · Codex · opencode)와 함께 만들어졌습니다.</strong><br />
+          이 문서에 등장하는 프로젝트 중<br /><strong>RB-Ware의 로봇 제어 구현(§ 2-4)을 제외한<br />모든 작업은 AI 코딩 파트너(Claude · GPT · Codex · opencode)와 함께 만들어졌습니다.</strong><br />
           AI는 제가 가장 잘 쓰는 도구이고, 결과물의 품질과 의사결정에 대한 책임은 <strong>제가 집니다.</strong>
         </div>
       </section>
@@ -1115,7 +1141,7 @@
             <p>
               2022년 ChatGPT 등장 이후 <strong>로컬 LLM × text2sql</strong> 서비스를 개인 사업으로 운영.<br />
               RWKV-4, LLaMA 1·2 등 당시 공개된 모델을 실제 프로덕션에 접목.
-              <span class="muted">오픈소스 기여로 <code>alasdairforsythe/tokenmonster</code>(Go SOTA 토크나이저), <code>backnotprop/plannotator</code>(에이전트 계획·리뷰 도구)에 PR을 보냈고,<br /> 최근에는 codex-mcp / codex-plugin / claude-agent-mcp / easy-opencode / dm-plz 등 MCP 생태계 도구를 직접 제작합니다.</span>
+              <span class="muted">오픈소스 기여로 <code>alasdairforsythe/tokenmonster</code>(Go SOTA 토크나이저), <code>backnotprop/plannotator</code>(에이전트 계획·리뷰 도구)에 PR을 보냈고,<br /> 최근에는 <code>claude/codex-workflow-kit</code>, <code>codex-mcp</code>, <code>claude-agent-mcp</code>, <code>claude-sync</code>, <code>opencode-reviewer</code>, <code>email-skills</code> 등 MCP·플러그인 생태계 도구를 직접 제작합니다.<br />Qwen3-8B를 1-bit까지 압축하는 <code>single-bit</code> 양자화 파이프라인도 직접 연구했습니다.</span>
             </p>
           </li>
           <li>
@@ -1128,8 +1154,8 @@
           <li>
             <h3>실시간 통신 &amp; 접근성</h3>
             <p>
-              WebRTC · LiveKit · RTSP · PTZ.
-              <span class="muted">티와이이엔지에서 Go + WebRTC로 RTSP 카메라 지연 30초 → 1초 단축.<br />개인 외주 사업으로 pion(Go WebRTC 프레임워크) 기반 rtsp2webrtc 구현 및 PTZ 카메라 원격 제어.</span>
+              WebRTC · LiveKit · RTSP · PTZ, 그리고 실시간 음성 STT.
+              <span class="muted">티와이이엔지에서 Go + WebRTC로 RTSP 카메라 지연 30초 → 1초 단축.<br />개인 외주 사업으로 pion(Go WebRTC 프레임워크) 기반 rtsp2webrtc 구현 및 PTZ 카메라 원격 제어.<br /><code>pipecat-call</code>(전화 음성 에이전트), <code>langCAT</code>(화면공유 실시간 자막) 등 음성·자막 도구도 직접 제작.</span>
             </p>
           </li>
           <li>
@@ -1150,13 +1176,21 @@
             <h3>게임 개발</h3>
             <p>
               Unity 6.3 URP 기반 3D 타이밍 카운터 액션 게임 <strong>Break Through</strong> 개발.
-              <span class="muted">상세는 § 4 참조.</span>
+              <span class="muted">상세는 § 4 참조. Godot + WebRTC 멀티플레이어 게임(<code>margin-godot</code>)도 별도 개발 중.</span>
             </p>
           </li>
           <li>
             <h3>AI × 금융</h3>
             <p>
-              <code>Cryptocurrency_with_ai</code> — FastAPI + AI 자동매매 실험.
+              FastAPI + AI 자동매매 실험(<code>Cryptocurrency_with_ai</code>)에서 출발해,
+              <span class="muted">차트 패턴·피보나치 분석을 C++20으로 구현한 Bybit 자동매매 시스템 <code>prometheus</code>(ZeroMQ IPC)까지 확장.</span>
+            </p>
+          </li>
+          <li>
+            <h3>네이티브 데스크톱 &amp; 그래픽스</h3>
+            <p>
+              Tauri v2 · Rust · WebGPU로 크로스플랫폼 데스크톱·그래픽 앱 제작.
+              <span class="muted">16,384² 타일 캔버스와 GPU 컴퓨트 셰이더로 구동되는 WebGPU 드로잉 엔진 <code>project-gpu</code>,<br />시크릿 마스킹·스냅샷 복원을 갖춘 설정 동기화 앱 <code>claude-sync</code> 등.</span>
             </p>
           </li>
         </ol>
@@ -1170,10 +1204,12 @@
             <tr><th>Project</th><th>Role</th><th>Description</th></tr>
           </thead>
           <tbody>
+            <!-- A. AI Agent & Developer Tooling -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-A · AI Agent &amp; Developer Tooling</span></td></tr>
             <tr>
-              <td class="name"><a href="https://github.com/j-token/easy-opencode">easy-opencode</a></td>
+              <td class="name"><a href="https://github.com/j-token/j-token-claude-workflow-kit">claude-workflow-kit</a> / <a href="https://github.com/j-token/j-token-codex-workflow-kit">codex-workflow-kit</a></td>
               <td class="role author">Author</td>
-              <td class="desc">opencode를 쉽게 시작하기 위한 LSP + AST-grep 플러그인 번들</td>
+              <td class="desc">Claude Code · Codex용 워크플로우 플러그인 — 거친 요청을 리뷰 가능한 스펙·구현·검증 단계로 전환 (본 포트폴리오도 이 키트로 작업)</td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/codex-mcp">codex-mcp</a></td>
@@ -1188,7 +1224,12 @@
             <tr>
               <td class="name"><a href="https://github.com/j-token/claude-agent-mcp">claude-agent-mcp</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Claude Agent SDK를 래핑한 MCP 서버</td>
+              <td class="desc">Claude Agent SDK를 래핑한 MCP 서버 — OAuth 인증, API 키 불필요</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/claude-sync">claude-sync</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">Rust · Tauri v2 기반 Claude Code 설정 동기화 — GUI+CLI, 시크릿 자동 마스킹, 스냅샷 복원</td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/dm-plz">dm-plz</a></td>
@@ -1196,15 +1237,118 @@
               <td class="desc">Telegram / Discord로 Claude Code 알림을 전달하는 MCP</td>
             </tr>
             <tr>
+              <td class="name"><a href="https://github.com/j-token/easy-opencode">easy-opencode</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">opencode를 쉽게 시작하기 위한 LSP + AST-grep 플러그인 번들</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/opencode-reviewer">opencode-reviewer</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">마크다운 문서에 드래그+코멘트 피드백을 남기는 VSCode 확장</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/email-skills">email-skills</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">Email Protocol — AI가 메일함을 POP3 / IMAP으로 읽기전용 검색하는 MCP · 스킬</td>
+            </tr>
+            <tr>
+              <td class="name"><span class="private-name">media-mcp-agents</span></td>
+              <td class="role author priv">Author · Private</td>
+              <td class="desc">FastMCP + Gemini 기반 오디오 · 비디오 · 이미지 · PDF 분석 MCP 서버</td>
+            </tr>
+
+            <!-- B. Realtime, Voice & Accessibility -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-B · Realtime, Voice &amp; Accessibility</span></td></tr>
+            <tr>
+              <td class="name"><span class="private-name">pipecat-call</span></td>
+              <td class="role author priv">Author · Private</td>
+              <td class="desc">Pipecat · Soniox · Cartesia 기반 전화 음성 에이전트 서버 (FastAPI, DTMF 키패드 수집)</td>
+            </tr>
+            <tr>
+              <td class="name"><span class="private-name">langCAT</span></td>
+              <td class="role author priv">Author · Private</td>
+              <td class="desc">화면 공유 오디오를 Deepgram STT + Gemini 번역으로 실시간 이중 자막 표시</td>
+            </tr>
+            <tr>
+              <td class="name"><span class="private-name">RTA</span></td>
+              <td class="role author priv">Author · Private</td>
+              <td class="desc">Real-Time Audio Translator — Electron + Soniox로 시스템 오디오 실시간 번역 / 자막 오버레이</td>
+            </tr>
+            <tr>
               <td class="name"><a href="https://github.com/j-token/play-tag">play-tag</a></td>
               <td class="role author">Author</td>
               <td class="desc">경도 — Flutter + BLE 기반 오프라인 팀 감지 술래잡기 앱 (Supabase Realtime)</td>
             </tr>
+
+            <!-- C. Graphics, Games & Engines -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-C · Graphics, Games &amp; Engines</span></td></tr>
             <tr>
-              <td class="name">RTA(비공개)</td>
-              <td class="role author">Author</td>
-              <td class="desc">Real-Time Audio Translator — Electron + Soniox로 시스템 오디오 실시간 번역/자막 오버레이</td>
+              <td class="name"><span class="private-name">project-gpu · G-Canvas</span></td>
+              <td class="role author priv">Author · Private</td>
+              <td class="desc">WebGPU 드로잉 엔진 — Tauri v2 · Rust · WGSL, 16,384² 타일 캔버스와 GPU 컴퓨트 셰이더</td>
             </tr>
+            <tr>
+              <td class="name">Break Through</td>
+              <td class="role author">Author</td>
+              <td class="desc">Unity 6.3 URP 3D 타이밍 카운터 액션 (§ 4 참조)</td>
+            </tr>
+            <tr>
+              <td class="name"><span class="private-name">margin-godot</span></td>
+              <td class="role author priv">Author · Private</td>
+              <td class="desc">Godot + WebRTC 기반 멀티플레이어 게임 (개발 중)</td>
+            </tr>
+
+            <!-- D. AI × Finance -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-D · AI × Finance</span></td></tr>
+            <tr>
+              <td class="name"><span class="private-name">prometheus</span></td>
+              <td class="role author priv">Author · Private</td>
+              <td class="desc">C++20 Bybit 자동매매 시스템 — 차트 패턴 인식 · 피보나치 분석, ZeroMQ IPC, FastAPI</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/Cryptocurrency_with_ai">Cryptocurrency_with_ai</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">FastAPI + AI 자동매매 실험</td>
+            </tr>
+
+            <!-- E. Web & Apps -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-E · Web &amp; Apps</span></td></tr>
+            <tr>
+              <td class="name"><a href="https://abyssal-moonlight-production.up.railway.app/ko" target="_blank" rel="noopener">Abyssal Moonlight</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">Next.js 16 + Live2D + 다국어 CMS를 갖춘 인디 게임 팬사이트 (§ 5 참조)</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/x-twitter">x-twitter</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">Bilibili · Twitter/X 미디어 게시글을 Discord 채널로 자동 포스팅하는 봇 (Node · PostgreSQL)</td>
+            </tr>
+            <tr>
+              <td class="name"><span class="private-name">karaoke · Subkara</span></td>
+              <td class="role author priv">Author · Private</td>
+              <td class="desc">Expo + Supabase 기반 서브컬쳐 노래방 검색 MVP</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/extract-text-from-json-by-gjson">extract-text-from-json-by-gjson</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">GJSON 표현식으로 JSON에서 원하는 값을 추출해 TXT로 저장하는 Go CLI</td>
+            </tr>
+            <tr>
+              <td class="name"><a href="https://github.com/j-token/supabase-custom-oauth-test">supabase-custom-oauth-test</a></td>
+              <td class="role author">Author</td>
+              <td class="desc">Supabase 네이버 커스텀 OAuth 프로바이더 샘플</td>
+            </tr>
+
+            <!-- F. Research -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-F · Research</span></td></tr>
+            <tr>
+              <td class="name"><span class="private-name">single-bit</span></td>
+              <td class="role author priv">Author · Private</td>
+              <td class="desc">Qwen3-8B 1-bit Post-Training Quantization 파이프라인 연구 — Hadamard rotation · GPTQ · BLoRA</td>
+            </tr>
+
+            <!-- G. Open-source Contributions -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-G · Open-source Contributions</span></td></tr>
             <tr>
               <td class="name"><a href="https://github.com/alasdairforsythe/tokenmonster">alasdairforsythe/tokenmonster</a></td>
               <td class="role">Contributor (PR)</td>
@@ -1216,19 +1360,9 @@
               <td class="desc">AI 코딩 에이전트 계획·코드 리뷰 도구</td>
             </tr>
             <tr>
-              <td class="name">Break Through</td>
-              <td class="role author">Author</td>
-              <td class="desc">Unity 6.3 URP 3D 타이밍 카운터 액션 (§ 4 참조)</td>
-            </tr>
-            <tr>
-              <td class="name"><a href="https://abyssal-moonlight-production.up.railway.app/ko" target="_blank" rel="noopener">Abyssal Moonlight</a></td>
-              <td class="role author">Author</td>
-              <td class="desc">Next.js 16 + Live2D + 다국어 CMS를 갖춘 인디 게임 팬사이트 (§ 5 참조)</td>
-            </tr>
-            <tr>
-              <td class="name"><a href="https://github.com/j-token/Cryptocurrency_with_ai">Cryptocurrency_with_ai</a></td>
-              <td class="role author">Author</td>
-              <td class="desc">FastAPI + AI 자동매매 실험</td>
+              <td class="name"><a href="https://github.com/j-token/pi-web-providers">pi-web-providers</a></td>
+              <td class="role">Contributor</td>
+              <td class="desc">pi 에이전트용 멀티 프로바이더 웹 확장 — search · contents · answer · research 라우팅</td>
             </tr>
           </tbody>
         </table>
@@ -1361,6 +1495,7 @@
             <span class="tag">C#</span>
             <span class="tag">C++</span>
             <span class="tag">Dart</span>
+            <span class="tag">GDScript</span>
           </div>
         </div>
 
@@ -1375,6 +1510,7 @@
             <span class="tag">Flutter</span>
             <span class="tag">Tailwind CSS</span>
             <span class="tag">Electron</span>
+            <span class="tag">Tauri</span>
           </div>
         </div>
 
@@ -1398,6 +1534,7 @@
             <span class="tag">WebSocket</span>
             <span class="tag">RTSP</span>
             <span class="tag">PTZ</span>
+            <span class="tag">ZeroMQ</span>
           </div>
         </div>
 
@@ -1429,6 +1566,8 @@
             <span class="tag">Unity 6.3</span>
             <span class="tag">URP</span>
             <span class="tag">ShaderGraph</span>
+            <span class="tag">Godot</span>
+            <span class="tag">WebGPU · WGSL</span>
             <span class="tag">Aseprite</span>
           </div>
         </div>
@@ -1441,6 +1580,17 @@
             <span class="tag ">opencode</span>
             <span class="tag ">MCP</span>
             <span class="tag ">SKILL</span>
+          </div>
+        </div>
+
+        <div class="stack-group">
+          <span class="stack-group-label">Voice &amp; Media AI</span>
+          <div class="stack-tags">
+            <span class="tag">Pipecat</span>
+            <span class="tag">Soniox</span>
+            <span class="tag">Deepgram</span>
+            <span class="tag">Cartesia</span>
+            <span class="tag">Gemini</span>
           </div>
         </div>
         </div>
