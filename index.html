@@ -461,6 +461,31 @@
     /* 5번째 스크린샷 — 3열 데스크탑에서는 그냥 일반 셀 */
     .screenshots figure.wide { grid-column: auto; }
 
+    /* Abyssal Moonlight 스크린샷 — fig2(세로형 Live2D)만 규격이 달라
+       오른쪽 열에 세워두고, 나머지 가로형 4장은 동일 박스로 통일 */
+    .screenshots.am-grid .am-uniform img {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: center;
+    }
+    @media (min-width: 901px) {
+      .screenshots.am-grid { grid-auto-flow: row dense; }
+      /* fig2 — 오른쪽(3열)에서 2행 높이를 차지하며 세로 비율 유지 */
+      .screenshots.am-grid .am-portrait {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        display: flex;
+        flex-direction: column;
+      }
+      .screenshots.am-grid .am-portrait img {
+        flex: 1 1 auto;
+        min-height: 0;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
     /* 라이트박스 — 이미지 클릭 시 확대 보기 */
     .lightbox-overlay {
       position: fixed;
@@ -1443,24 +1468,24 @@
           <span class="chip dark">Railway · Docker</span>
         </div>
 
-        <div class="screenshots">
-          <figure>
+        <div class="screenshots am-grid">
+          <figure class="am-uniform">
             <img src="assets/screenshots/abyssal-moonlight-hero.png" alt="Abyssal Moonlight — 한국어(/ko) 메인 히어로 섹션, '심해의 도시, 어비사리아.' 헤드라인과 프롤로그 CTA 버튼" loading="lazy" />
             <figcaption>Fig. 1 — Hero (ko)</figcaption>
           </figure>
-          <figure>
+          <figure class="am-portrait">
             <img src="assets/screenshots/abyssal-moonlight-live2d.png" alt="Abyssal Moonlight — 카렌(Calen) 캐릭터의 Live2D 모델이 메인 스테이지에서 렌더링되는 모습" loading="lazy" />
             <figcaption>Fig. 2 — Live2D Stage</figcaption>
           </figure>
-          <figure>
+          <figure class="am-uniform">
             <img src="assets/screenshots/abyssal-moonlight-characters.png" alt="Abyssal Moonlight — 주요 캐릭터(카렌·시온) 카드가 나열된 Characters 섹션" loading="lazy" />
             <figcaption>Fig. 3 — Characters</figcaption>
           </figure>
-          <figure>
+          <figure class="am-uniform">
             <img src="assets/screenshots/abyssal-moonlight-i18n.png" alt="Abyssal Moonlight — 같은 페이지의 일본어(/ja) 버전, 言語 스위처와 일본어 카피로 다국어 SSR 결과 표시" loading="lazy" />
             <figcaption>Fig. 4 — i18n (ja)</figcaption>
           </figure>
-          <figure class="wide">
+          <figure class="am-uniform wide">
             <img src="assets/screenshots/abyssal-moonlight-admin.png" data-original-src="assets/screenshots/abyssal-moonlight-admin-original.png" alt="Abyssal Moonlight — 어드민 CMS 대시보드. Hero 헤드라인·서브라인 등 슬롯별로 한·영·일 다국어 텍스트와 마크다운을 편집하는 카드형 폼이 나열된 화면" loading="lazy" />
             <figcaption>Fig. 5 — Admin CMS</figcaption>
           </figure>
