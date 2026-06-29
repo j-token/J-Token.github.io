@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -141,6 +141,34 @@
       display: block;
       color: var(--accent);
       font-weight: 600;
+    }
+
+    /* Language toggle (i18n) */
+    html[data-lang="en"] .lang-ko { display: none; }
+    html[data-lang="ko"] .lang-en { display: none; }
+    .lang-switch {
+      display: inline-flex;
+      margin-bottom: 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .lang-switch button {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 5px 12px;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .lang-switch button + button { border-left: 1px solid var(--line); }
+    .lang-switch button.active {
+      background: var(--accent);
+      color: #fff;
     }
 
     /* Section — 2 컬럼 문서 레이아웃
@@ -1205,6 +1233,10 @@
         <div class="subtitle">Full-Stack Developer · Portfolio Document</div>
       </div>
       <div class="stamp">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang-btn="ko" class="active" aria-pressed="true">KO</button>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+        </div>
         <span class="doc-no">Doc. No. JT-2026-05</span>
         <span>Revision 03</span>
       </div>
@@ -1215,16 +1247,27 @@
       <!-- § 1. About -->
       <section id="about">
         <h2><span class="marker">§ 1</span>About</h2>
-        <p class="lede">
+        <p class="lede lang-ko">
           문제 해결을 위해 <em>협업의 가치</em>와 <em>기술적 깊이</em>를 중요하게 생각하는 풀스택 개발자입니다.
           LLM이 세상에 막 나왔을 때부터 로컬 AI 서비스를 직접 운영해 왔고<br />
           요즘은 AI 에이전트 도구를 직접 만드는 일에 몰두하고 있습니다.
         </p>
-        <p class="lede">재미있어 보이는 건 참을 수 없습니다.</p>
-        <div class="note">
+        <p class="lede lang-en">
+          A full-stack developer who values <em>collaboration</em> and <em>technical depth</em> in solving problems.
+          I've run my own local AI services since the very dawn of LLMs,<br />
+          and these days I'm absorbed in building AI agent tooling myself.
+        </p>
+        <p class="lede lang-ko">재미있어 보이는 건 참을 수 없습니다.</p>
+        <p class="lede lang-en">If it looks fun, I can't resist it.</p>
+        <div class="note lang-ko">
           <span class="note-label">Disclosure</span>
           이 문서에 등장하는 프로젝트 중<br /><strong>RB-Ware의 로봇 제어 구현(§ 2-4)을 제외한<br />모든 작업은 AI 코딩 파트너(Claude · GPT · Codex · opencode)와 함께 만들어졌습니다.</strong><br />
           AI는 제가 가장 잘 쓰는 도구이고, 결과물의 품질과 의사결정에 대한 책임은 <strong>제가 집니다.</strong>
+        </div>
+        <div class="note lang-en">
+          <span class="note-label">Disclosure</span>
+          Of the projects in this document,<br /><strong>every work except the robot-control implementation at RB-Ware (§ 2-4)<br />was built together with AI coding partners (Claude · GPT · Codex · opencode).</strong><br />
+          AI is the tool I wield best, and I take <strong>full responsibility</strong> for the quality of the output and the decisions behind it.
         </div>
       </section>
 
@@ -1232,7 +1275,7 @@
       <section id="interests">
         <h2><span class="marker">§ 2</span>Interests</h2>
         <ol class="interests">
-          <li>
+          <li class="lang-ko">
             <h3>AI 에이전트 &amp; 로컬 LLM</h3>
             <p>
               2022년 ChatGPT 등장 이후 <strong>로컬 LLM × text2sql</strong> 서비스를 개인 사업으로 운영.<br />
@@ -1240,53 +1283,110 @@
               <span class="muted">오픈소스 기여로 <code>alasdairforsythe/tokenmonster</code>(Go SOTA 토크나이저), <code>backnotprop/plannotator</code>(에이전트 계획·리뷰 도구)에 PR을 보냈고,<br /> 최근에는 <code>claude/codex-workflow-kit</code>, <code>codex-mcp</code>, <code>claude-agent-mcp</code>, <code>claude-sync</code>, <code>opencode-reviewer</code>, <code>email-skills</code> 등 MCP·플러그인 생태계 도구를 직접 제작합니다.<br />Qwen3-8B를 1-bit까지 압축하는 <code>single-bit</code> 양자화 파이프라인도 직접 연구했습니다.</span>
             </p>
           </li>
-          <li>
+          <li class="lang-en">
+            <h3>AI Agents &amp; Local LLMs</h3>
+            <p>
+              Ran a <strong>local LLM × text2sql</strong> service as a solo business right after ChatGPT's 2022 debut.<br />
+              Brought then-public models like RWKV-4 and LLaMA 1·2 into real production.
+              <span class="muted">Contributed PRs to <code>alasdairforsythe/tokenmonster</code> (a Go SOTA tokenizer) and <code>backnotprop/plannotator</code> (an agent planning &amp; review tool) as open source,<br /> and recently I build MCP &amp; plugin ecosystem tools myself — <code>claude/codex-workflow-kit</code>, <code>codex-mcp</code>, <code>claude-agent-mcp</code>, <code>claude-sync</code>, <code>opencode-reviewer</code>, <code>email-skills</code>.<br />I also researched <code>single-bit</code>, a quantization pipeline that compresses Qwen3-8B down to 1-bit.</span>
+            </p>
+          </li>
+          <li class="lang-ko">
             <h3>풀스택 TypeScript</h3>
             <p>
               NestJS · React / Next.js · React Native / Expo · SvelteKit.
               <span class="muted">판도플랫폼 Gen AI 베리어프리 키오스크, 엔피엘솔루션 Better Auth 시스템,<br />플레이모어 아미고 앱 결제·홈페이지 리뉴얼에서 실무 적용.</span>
             </p>
           </li>
-          <li>
+          <li class="lang-en">
+            <h3>Full-Stack TypeScript</h3>
+            <p>
+              NestJS · React / Next.js · React Native / Expo · SvelteKit.
+              <span class="muted">Applied in production at Pando Platform (Gen AI barrier-free kiosk), NPL Solution (Better Auth system),<br />and Playmore (Amigo app payments &amp; homepage renewal).</span>
+            </p>
+          </li>
+          <li class="lang-ko">
             <h3>실시간 통신 &amp; 접근성</h3>
             <p>
               WebRTC · LiveKit · RTSP · PTZ, 그리고 실시간 음성 STT.
               <span class="muted">티와이이엔지에서 Go + WebRTC로 RTSP 카메라 지연 30초 → 1초 단축.<br />개인 외주 사업으로 pion(Go WebRTC 프레임워크) 기반 rtsp2webrtc 구현 및 PTZ 카메라 원격 제어.<br /><code>pipecat-call</code>(전화 음성 에이전트), <code>langCAT</code>(화면공유 실시간 자막) 등 음성·자막 도구도 직접 제작.</span>
             </p>
           </li>
-          <li>
+          <li class="lang-en">
+            <h3>Realtime Communication &amp; Accessibility</h3>
+            <p>
+              WebRTC · LiveKit · RTSP · PTZ, plus real-time speech STT.
+              <span class="muted">At TY-Eng, cut RTSP camera latency from 30s → 1s with Go + WebRTC.<br />As freelance work, built rtsp2webrtc on pion (the Go WebRTC framework) with remote PTZ camera control.<br />Also built voice &amp; caption tools myself — <code>pipecat-call</code> (a phone voice agent) and <code>langCAT</code> (real-time captions for screen sharing).</span>
+            </p>
+          </li>
+          <li class="lang-ko">
             <h3>협동로봇 &amp; 산업 자동화<span class="role-badge solo">Solo Build</span></h3>
             <p>
               <strong>RB-Ware (한국 협동로봇 용접 자동화 1위, 레인보우로보틱스 파트너)</strong>에서 Flutter로 로봇 조작 앱, Unity로 티칭·시뮬레이션 UI 개발.
               <span class="muted">로봇 ↔ 컨트롤러 간 TCP / MQTT 실시간 통신 프로토콜 직접 구현.<br />본 포트폴리오에서 <strong>유일한 AI 비개입 구현</strong>.</span>
             </p>
           </li>
-          <li>
+          <li class="lang-en">
+            <h3>Collaborative Robots &amp; Industrial Automation<span class="role-badge solo">Solo Build</span></h3>
+            <p>
+              At <strong>RB-Ware (Korea's No. 1 in collaborative-robot welding automation, a Rainbow Robotics partner)</strong>, built the robot-control app in Flutter and the teaching &amp; simulation UI in Unity.
+              <span class="muted">Implemented the robot ↔ controller real-time TCP / MQTT protocol myself.<br />The <strong>only AI-free implementation</strong> in this portfolio.</span>
+            </p>
+          </li>
+          <li class="lang-ko">
             <h3>인증 &amp; OAuth 통합</h3>
             <p>
               Better Auth + NestJS + PostgreSQL 기반 네이버·카카오·구글 연동.
               <span class="muted">Supabase 네이버 커스텀 OAuth 프로바이더(<code>supabase-custom-oauth-test</code>) 공개.</span>
             </p>
           </li>
-          <li>
+          <li class="lang-en">
+            <h3>Authentication &amp; OAuth Integration</h3>
+            <p>
+              Naver · Kakao · Google sign-in built on Better Auth + NestJS + PostgreSQL.
+              <span class="muted">Published a Supabase Naver custom OAuth provider (<code>supabase-custom-oauth-test</code>).</span>
+            </p>
+          </li>
+          <li class="lang-ko">
             <h3>게임 개발</h3>
             <p>
               Unity 6.3 URP 기반 3D 타이밍 카운터 액션 게임 <strong>Break Through</strong> 개발.
               <span class="muted">상세는 § 4 참조. Godot + WebRTC 멀티플레이어 게임(<code>margin-godot</code>)도 별도 개발 중.</span>
             </p>
           </li>
-          <li>
+          <li class="lang-en">
+            <h3>Game Development</h3>
+            <p>
+              Built <strong>Break Through</strong>, a 3D timing-counter action game on Unity 6.3 URP.
+              <span class="muted">See § 4 for details. Also developing <code>margin-godot</code>, a Godot + WebRTC multiplayer game, on the side.</span>
+            </p>
+          </li>
+          <li class="lang-ko">
             <h3>AI × 금융</h3>
             <p>
               FastAPI + AI 자동매매 실험(<code>Cryptocurrency_with_ai</code>)에서 출발해,
               <span class="muted">차트 패턴·피보나치 분석을 C++20으로 구현한 Bybit 자동매매 시스템 <code>prometheus</code>(ZeroMQ IPC)까지 확장.</span>
             </p>
           </li>
-          <li>
+          <li class="lang-en">
+            <h3>AI × Finance</h3>
+            <p>
+              Starting from a FastAPI + AI auto-trading experiment (<code>Cryptocurrency_with_ai</code>),
+              <span class="muted">expanded into <code>prometheus</code>, a Bybit auto-trading system implementing chart-pattern &amp; Fibonacci analysis in C++20 (ZeroMQ IPC).</span>
+            </p>
+          </li>
+          <li class="lang-ko">
             <h3>네이티브 데스크톱 &amp; 그래픽스</h3>
             <p>
               Tauri v2 · Rust · WebGPU로 크로스플랫폼 데스크톱·그래픽 앱 제작.
               <span class="muted">16,384² 타일 캔버스와 GPU 컴퓨트 셰이더로 구동되는 WebGPU 드로잉 엔진 <code>project-gpu</code>,<br />시크릿 마스킹·스냅샷 복원을 갖춘 설정 동기화 앱 <code>claude-sync</code> 등.</span>
+            </p>
+          </li>
+          <li class="lang-en">
+            <h3>Native Desktop &amp; Graphics</h3>
+            <p>
+              Cross-platform desktop &amp; graphics apps with Tauri v2 · Rust · WebGPU.
+              <span class="muted"><code>project-gpu</code>, a WebGPU drawing engine powered by a 16,384² tiled canvas and GPU compute shaders;<br /><code>claude-sync</code>, a settings-sync app with secret masking &amp; snapshot restore; and more.</span>
             </p>
           </li>
         </ol>
@@ -1305,52 +1405,52 @@
             <tr>
               <td class="name"><a href="https://github.com/j-token/j-token-claude-workflow-kit">claude-workflow-kit</a> / <a href="https://github.com/j-token/j-token-codex-workflow-kit">codex-workflow-kit</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Claude Code · Codex용 워크플로우 플러그인 — 거친 요청을 리뷰 가능한 스펙·구현·검증 단계로 전환 (본 포트폴리오도 이 키트로 작업)</td>
+              <td class="desc"><span class="lang-ko">Claude Code · Codex용 워크플로우 플러그인 — 거친 요청을 리뷰 가능한 스펙·구현·검증 단계로 전환 (본 포트폴리오도 이 키트로 작업)</span><span class="lang-en">Workflow plugins for Claude Code · Codex — turn rough requests into reviewable spec / implementation / verification stages (this portfolio was built with this kit too)</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/codex-mcp">codex-mcp</a></td>
               <td class="role author">Author</td>
-              <td class="desc">OpenAI Codex SDK 기반 MCP 서버 — ChatGPT OAuth 로그인, API 키 불필요</td>
+              <td class="desc"><span class="lang-ko">OpenAI Codex SDK 기반 MCP 서버 — ChatGPT OAuth 로그인, API 키 불필요</span><span class="lang-en">MCP server on the OpenAI Codex SDK — ChatGPT OAuth login, no API key needed</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/codex-plugin">codex-plugin</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Claude Code용 OpenAI Codex 통합 플러그인 (구조화 JSON 출력)</td>
+              <td class="desc"><span class="lang-ko">Claude Code용 OpenAI Codex 통합 플러그인 (구조화 JSON 출력)</span><span class="lang-en">OpenAI Codex integration plugin for Claude Code (structured JSON output)</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/claude-agent-mcp">claude-agent-mcp</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Claude Agent SDK를 래핑한 MCP 서버 — OAuth 인증, API 키 불필요</td>
+              <td class="desc"><span class="lang-ko">Claude Agent SDK를 래핑한 MCP 서버 — OAuth 인증, API 키 불필요</span><span class="lang-en">MCP server wrapping the Claude Agent SDK — OAuth auth, no API key needed</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/claude-sync">claude-sync</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Rust · Tauri v2 기반 Claude Code 설정 동기화 — GUI+CLI, 시크릿 자동 마스킹, 스냅샷 복원</td>
+              <td class="desc"><span class="lang-ko">Rust · Tauri v2 기반 Claude Code 설정 동기화 — GUI+CLI, 시크릿 자동 마스킹, 스냅샷 복원</span><span class="lang-en">Claude Code settings sync on Rust · Tauri v2 — GUI + CLI, automatic secret masking, snapshot restore</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/dm-plz">dm-plz</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Telegram / Discord로 Claude Code 알림을 전달하는 MCP</td>
+              <td class="desc"><span class="lang-ko">Telegram / Discord로 Claude Code 알림을 전달하는 MCP</span><span class="lang-en">An MCP that forwards Claude Code notifications to Telegram / Discord</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/easy-opencode">easy-opencode</a></td>
               <td class="role author">Author</td>
-              <td class="desc">opencode를 쉽게 시작하기 위한 LSP + AST-grep 플러그인 번들</td>
+              <td class="desc"><span class="lang-ko">opencode를 쉽게 시작하기 위한 LSP + AST-grep 플러그인 번들</span><span class="lang-en">An LSP + AST-grep plugin bundle to get started with opencode easily</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/opencode-reviewer">opencode-reviewer</a></td>
               <td class="role author">Author</td>
-              <td class="desc">마크다운 문서에 드래그+코멘트 피드백을 남기는 VSCode 확장</td>
+              <td class="desc"><span class="lang-ko">마크다운 문서에 드래그+코멘트 피드백을 남기는 VSCode 확장</span><span class="lang-en">A VSCode extension for leaving drag-and-comment feedback on markdown documents</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/email-skills">email-skills</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Email Protocol — AI가 메일함을 POP3 / IMAP으로 읽기전용 검색하는 MCP · 스킬</td>
+              <td class="desc"><span class="lang-ko">Email Protocol — AI가 메일함을 POP3 / IMAP으로 읽기전용 검색하는 MCP · 스킬</span><span class="lang-en">Email Protocol — an MCP &amp; skill for AI to search mailboxes read-only over POP3 / IMAP</span></td>
             </tr>
             <tr>
               <td class="name"><span class="private-name">media-mcp-agents</span></td>
               <td class="role author priv">Author · Private</td>
-              <td class="desc">FastMCP + Gemini 기반 오디오 · 비디오 · 이미지 · PDF 분석 MCP 서버</td>
+              <td class="desc"><span class="lang-ko">FastMCP + Gemini 기반 오디오 · 비디오 · 이미지 · PDF 분석 MCP 서버</span><span class="lang-en">Audio · video · image · PDF analysis MCP server on FastMCP + Gemini</span></td>
             </tr>
 
             <!-- B. Realtime, Voice & Accessibility -->
@@ -1358,22 +1458,22 @@
             <tr>
               <td class="name"><span class="private-name">pipecat-call</span></td>
               <td class="role author priv">Author · Private</td>
-              <td class="desc">Pipecat · Soniox · Cartesia 기반 전화 음성 에이전트 서버 (FastAPI, DTMF 키패드 수집)</td>
+              <td class="desc"><span class="lang-ko">Pipecat · Soniox · Cartesia 기반 전화 음성 에이전트 서버 (FastAPI, DTMF 키패드 수집)</span><span class="lang-en">Phone voice-agent server on Pipecat · Soniox · Cartesia (FastAPI, DTMF keypad capture)</span></td>
             </tr>
             <tr>
               <td class="name"><span class="private-name">langCAT</span></td>
               <td class="role author priv">Author · Private</td>
-              <td class="desc">화면 공유 오디오를 Deepgram STT + Gemini 번역으로 실시간 이중 자막 표시</td>
+              <td class="desc"><span class="lang-ko">화면 공유 오디오를 Deepgram STT + Gemini 번역으로 실시간 이중 자막 표시</span><span class="lang-en">Real-time dual subtitles for screen-share audio via Deepgram STT + Gemini translation</span></td>
             </tr>
             <tr>
               <td class="name"><span class="private-name">RTA</span></td>
               <td class="role author priv">Author · Private</td>
-              <td class="desc">Real-Time Audio Translator — Electron + Soniox로 시스템 오디오 실시간 번역 / 자막 오버레이</td>
+              <td class="desc"><span class="lang-ko">Real-Time Audio Translator — Electron + Soniox로 시스템 오디오 실시간 번역 / 자막 오버레이</span><span class="lang-en">Real-Time Audio Translator — live system-audio translation / subtitle overlay with Electron + Soniox</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/play-tag">play-tag</a></td>
               <td class="role author">Author</td>
-              <td class="desc">경도 — Flutter + BLE 기반 오프라인 팀 감지 술래잡기 앱 (Supabase Realtime)</td>
+              <td class="desc"><span class="lang-ko">경도 — Flutter + BLE 기반 오프라인 팀 감지 술래잡기 앱 (Supabase Realtime)</span><span class="lang-en">Gyeongdo — an offline BLE team-detection tag game app in Flutter (Supabase Realtime)</span></td>
             </tr>
 
             <!-- C. Graphics, Games & Engines -->
@@ -1381,17 +1481,17 @@
             <tr>
               <td class="name"><span class="private-name">project-gpu · G-Canvas</span></td>
               <td class="role author priv">Author · Private</td>
-              <td class="desc">WebGPU 드로잉 엔진 — Tauri v2 · Rust · WGSL, 16,384² 타일 캔버스와 GPU 컴퓨트 셰이더</td>
+              <td class="desc"><span class="lang-ko">WebGPU 드로잉 엔진 — Tauri v2 · Rust · WGSL, 16,384² 타일 캔버스와 GPU 컴퓨트 셰이더</span><span class="lang-en">WebGPU drawing engine — Tauri v2 · Rust · WGSL, 16,384² tiled canvas and GPU compute shaders</span></td>
             </tr>
             <tr>
               <td class="name">Break Through</td>
               <td class="role author">Author</td>
-              <td class="desc">Unity 6.3 URP 3D 타이밍 카운터 액션 (§ 4 참조)</td>
+              <td class="desc"><span class="lang-ko">Unity 6.3 URP 3D 타이밍 카운터 액션 (§ 4 참조)</span><span class="lang-en">Unity 6.3 URP 3D timing-counter action (see § 4)</span></td>
             </tr>
             <tr>
               <td class="name"><span class="private-name">margin-godot</span></td>
               <td class="role author priv">Author · Private</td>
-              <td class="desc">Godot + WebRTC 기반 멀티플레이어 게임 (개발 중)</td>
+              <td class="desc"><span class="lang-ko">Godot + WebRTC 기반 멀티플레이어 게임 (개발 중)</span><span class="lang-en">Godot + WebRTC multiplayer game (in development)</span></td>
             </tr>
 
             <!-- D. AI × Finance -->
@@ -1399,12 +1499,12 @@
             <tr>
               <td class="name"><span class="private-name">prometheus</span></td>
               <td class="role author priv">Author · Private</td>
-              <td class="desc">C++20 Bybit 자동매매 시스템 — 차트 패턴 인식 · 피보나치 분석, ZeroMQ IPC, FastAPI</td>
+              <td class="desc"><span class="lang-ko">C++20 Bybit 자동매매 시스템 — 차트 패턴 인식 · 피보나치 분석, ZeroMQ IPC, FastAPI</span><span class="lang-en">C++20 Bybit auto-trading system — chart-pattern recognition · Fibonacci analysis, ZeroMQ IPC, FastAPI</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/Cryptocurrency_with_ai">Cryptocurrency_with_ai</a></td>
               <td class="role author">Author</td>
-              <td class="desc">FastAPI + AI 자동매매 실험</td>
+              <td class="desc"><span class="lang-ko">FastAPI + AI 자동매매 실험</span><span class="lang-en">FastAPI + AI auto-trading experiment</span></td>
             </tr>
 
             <!-- E. Web & Apps -->
@@ -1412,27 +1512,27 @@
             <tr>
               <td class="name"><a href="https://abyssal-moonlight-production.up.railway.app/ko" target="_blank" rel="noopener">Abyssal Moonlight</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Next.js 16 + Live2D + 다국어 CMS를 갖춘 인디 게임 팬사이트 (§ 5 참조)</td>
+              <td class="desc"><span class="lang-ko">Next.js 16 + Live2D + 다국어 CMS를 갖춘 인디 게임 팬사이트 (§ 5 참조)</span><span class="lang-en">Indie-game fansite with Next.js 16 + Live2D + multilingual CMS (see § 5)</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/x-twitter">x-twitter</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Bilibili · Twitter/X 미디어 게시글을 Discord 채널로 자동 포스팅하는 봇 (Node · PostgreSQL)</td>
+              <td class="desc"><span class="lang-ko">Bilibili · Twitter/X 미디어 게시글을 Discord 채널로 자동 포스팅하는 봇 (Node · PostgreSQL)</span><span class="lang-en">A bot that auto-posts Bilibili · Twitter/X media posts to Discord channels (Node · PostgreSQL)</span></td>
             </tr>
             <tr>
               <td class="name"><span class="private-name">karaoke · Subkara</span></td>
               <td class="role author priv">Author · Private</td>
-              <td class="desc">Expo + Supabase 기반 서브컬쳐 노래방 검색 MVP</td>
+              <td class="desc"><span class="lang-ko">Expo + Supabase 기반 서브컬쳐 노래방 검색 MVP</span><span class="lang-en">Subculture karaoke-search MVP on Expo + Supabase</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/extract-text-from-json-by-gjson">extract-text-from-json-by-gjson</a></td>
               <td class="role author">Author</td>
-              <td class="desc">GJSON 표현식으로 JSON에서 원하는 값을 추출해 TXT로 저장하는 Go CLI</td>
+              <td class="desc"><span class="lang-ko">GJSON 표현식으로 JSON에서 원하는 값을 추출해 TXT로 저장하는 Go CLI</span><span class="lang-en">A Go CLI that extracts values from JSON via GJSON expressions and saves them as TXT</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/supabase-custom-oauth-test">supabase-custom-oauth-test</a></td>
               <td class="role author">Author</td>
-              <td class="desc">Supabase 네이버 커스텀 OAuth 프로바이더 샘플</td>
+              <td class="desc"><span class="lang-ko">Supabase 네이버 커스텀 OAuth 프로바이더 샘플</span><span class="lang-en">Sample Supabase Naver custom OAuth provider</span></td>
             </tr>
 
             <!-- F. Research -->
@@ -1440,7 +1540,7 @@
             <tr>
               <td class="name"><span class="private-name">single-bit</span></td>
               <td class="role author priv">Author · Private</td>
-              <td class="desc">Qwen3-8B 1-bit Post-Training Quantization 파이프라인 연구 — Hadamard rotation · GPTQ · BLoRA</td>
+              <td class="desc"><span class="lang-ko">Qwen3-8B 1-bit Post-Training Quantization 파이프라인 연구 — Hadamard rotation · GPTQ · BLoRA</span><span class="lang-en">Research on a Qwen3-8B 1-bit post-training quantization pipeline — Hadamard rotation · GPTQ · BLoRA</span></td>
             </tr>
 
             <!-- G. Open-source Contributions -->
@@ -1448,17 +1548,17 @@
             <tr>
               <td class="name"><a href="https://github.com/alasdairforsythe/tokenmonster">alasdairforsythe/tokenmonster</a></td>
               <td class="role">Contributor (PR)</td>
-              <td class="desc">Go 기반 SOTA 토크나이저 — 로컬 LLM × text2sql 시기 기여</td>
+              <td class="desc"><span class="lang-ko">Go 기반 SOTA 토크나이저 — 로컬 LLM × text2sql 시기 기여</span><span class="lang-en">Go-based SOTA tokenizer — contributed during my local LLM × text2sql days</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/backnotprop/plannotator">backnotprop/plannotator</a></td>
               <td class="role">Contributor (PR)</td>
-              <td class="desc">AI 코딩 에이전트 계획·코드 리뷰 도구</td>
+              <td class="desc"><span class="lang-ko">AI 코딩 에이전트 계획·코드 리뷰 도구</span><span class="lang-en">AI coding-agent planning &amp; code-review tool</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/pi-web-providers">pi-web-providers</a></td>
               <td class="role">Contributor</td>
-              <td class="desc">pi 에이전트용 멀티 프로바이더 웹 확장 — search · contents · answer · research 라우팅</td>
+              <td class="desc"><span class="lang-ko">pi 에이전트용 멀티 프로바이더 웹 확장 — search · contents · answer · research 라우팅</span><span class="lang-en">Multi-provider web extension for the pi agent — search · contents · answer · research routing</span></td>
             </tr>
           </tbody>
         </table>
@@ -1467,9 +1567,13 @@
       <!-- § 4. Game — Break Through -->
       <section id="game">
         <h2><span class="marker">§ 4</span>Game — Break Through</h2>
-        <p>
+        <p class="lang-ko">
           Unity 6.3 URP 기반 3D 타이밍 카운터 액션 게임.
           흑백 픽셀 아웃라인 스타일을 커스텀 셰이더로 구현했습니다.
+        </p>
+        <p class="lang-en">
+          A 3D timing-counter action game on Unity 6.3 URP.
+          The black-and-white pixel-outline style is implemented with a custom shader.
         </p>
 
         <div class="game-meta">
@@ -1505,12 +1609,18 @@
           </figure>
         </div>
 
-        <h3>주요 시스템</h3>
-        <ul class="system-list">
+        <h3><span class="lang-ko">주요 시스템</span><span class="lang-en">Key Systems</span></h3>
+        <ul class="system-list lang-ko">
           <li><strong>GameManager</strong> — 단일 씬 상태머신 (Title → Fighting → Choosing → Dying → GameOver)</li>
           <li><strong>PlayerCombat</strong> — 3단 콤보 상태머신, 애니메이션 이벤트 릴레이 패턴으로 Animator ↔ 전투 코드 분리</li>
           <li><strong>DebrisPool</strong> — 인덱스 기반 오브젝트 풀링으로 구현</li>
           <li><strong>PixelOutlineFeature</strong> — 커스텀 URP ScriptableRendererFeature. ToonCrack·Dither 셰이더로 레트로 픽셀 아웃라인 렌더링</li>
+        </ul>
+        <ul class="system-list lang-en">
+          <li><strong>GameManager</strong> — a single-scene state machine (Title → Fighting → Choosing → Dying → GameOver)</li>
+          <li><strong>PlayerCombat</strong> — a 3-hit combo state machine; an animation-event relay pattern decouples the Animator from the combat code</li>
+          <li><strong>DebrisPool</strong> — implemented with index-based object pooling</li>
+          <li><strong>PixelOutlineFeature</strong> — a custom URP ScriptableRendererFeature; renders a retro pixel outline via ToonCrack &amp; Dither shaders</li>
         </ul>
 
         <a href="https://j-token.itch.io/break-through" class="cta-button" target="_blank" rel="noopener">▸ Play on itch.io</a>
@@ -1519,11 +1629,17 @@
       <!-- § 5. Web — Abyssal Moonlight -->
       <section id="abyssal-moonlight">
         <h2><span class="marker">§ 5</span>Web — Abyssal Moonlight</h2>
-        <p>
+        <p class="lang-ko">
           인디 게임 <em>深海月光 (Abyssal Moonlight)</em>의 비공식 팬사이트.
           Next.js 16 App Router 기반 SSR, 한·영·일 다국어 동적 라우팅,
           슬롯 단위로 카피·이미지를 실시간 편집하는 어드민 CMS, PixiJS와
           Cubism Core로 구동되는 Live2D 캐릭터 스테이지를 한 코드베이스에 묶었습니다.
+        </p>
+        <p class="lang-en">
+          An unofficial fansite for the indie game <em>深海月光 (Abyssal Moonlight)</em>.
+          It bundles Next.js 16 App Router SSR, dynamic KO/EN/JA multilingual routing,
+          an admin CMS that edits copy &amp; images live per slot, and a Live2D character
+          stage powered by PixiJS and Cubism Core — all in one codebase.
         </p>
 
         <div class="game-meta">
@@ -1562,14 +1678,22 @@
           </figure>
         </div>
 
-        <h3>주요 시스템</h3>
-        <ul class="system-list">
+        <h3><span class="lang-ko">주요 시스템</span><span class="lang-en">Key Systems</span></h3>
+        <ul class="system-list lang-ko">
           <li><strong>i18n Routing</strong> — App Router 동적 세그먼트 <code>app/[locale]/…</code>로 한·영·일 SSR 분기, 언어 스위처 + 쿠키 기반 선호도 저장</li>
           <li><strong>Slot-based CMS</strong> — <code>content</code> 테이블 복합 PK (<code>key</code> + <code>locale</code>)로 다국어 카피·마크다운·이미지·JSON을 슬롯 단위로 관리. DB가 비어 있어도 코드의 <code>defaultValues</code>로 자동 폴백</li>
           <li><strong>Admin Auth</strong> — better-auth 이메일·비밀번호 + 세션 쿠키, <code>ADMIN_EMAILS</code> 화이트리스트로 어드민 라우트 가드. 변경 이력은 <code>updatedBy</code> FK로 추적</li>
           <li><strong>Live2D Stage</strong> — PixiJS v7 + <code>pixi-live2d-display-mulmotion</code>. Cubism Core는 라이선스상 npm 재배포 불가이므로 CDN 동적 로드</li>
           <li><strong>Media Pipeline</strong> — 어드민 업로드 → AWS SDK → Railway Storage(S3 호환) → 공개 URL → SSR 다음 요청부터 즉시 반영</li>
           <li><strong>Deploy</strong> — Node 22-Alpine 멀티스테이지 Dockerfile + Next.js standalone 출력, Railway에서 Postgres·Storage 환경변수 자동 주입</li>
+        </ul>
+        <ul class="system-list lang-en">
+          <li><strong>i18n Routing</strong> — KO/EN/JA SSR branching via the App Router dynamic segment <code>app/[locale]/…</code>, with a language switcher + cookie-based preference storage</li>
+          <li><strong>Slot-based CMS</strong> — a composite PK (<code>key</code> + <code>locale</code>) on the <code>content</code> table manages multilingual copy · markdown · images · JSON per slot; falls back automatically to <code>defaultValues</code> in code even when the DB is empty</li>
+          <li><strong>Admin Auth</strong> — better-auth email/password + session cookies, with an <code>ADMIN_EMAILS</code> whitelist guarding admin routes; change history tracked via an <code>updatedBy</code> FK</li>
+          <li><strong>Live2D Stage</strong> — PixiJS v7 + <code>pixi-live2d-display-mulmotion</code>. Cubism Core can't be redistributed on npm for license reasons, so it's loaded dynamically from a CDN</li>
+          <li><strong>Media Pipeline</strong> — admin upload → AWS SDK → Railway Storage (S3-compatible) → public URL → reflected immediately on the next SSR request</li>
+          <li><strong>Deploy</strong> — a Node 22-Alpine multi-stage Dockerfile + Next.js standalone output; Railway auto-injects Postgres · Storage env vars</li>
         </ul>
 
         <a href="https://abyssal-moonlight-production.up.railway.app/ko" class="cta-button" target="_blank" rel="noopener">▸ View Live Site</a>
@@ -1717,18 +1841,18 @@
         <!-- ponytail: Formspree backend/email/spam; fetch() keeps user on page — lighter than the AJAX SDK. -->
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/xojolqlb" method="POST">
           <div>
-            <label class="field-label" for="cf-name">이름</label>
+            <label class="field-label" for="cf-name"><span class="lang-ko">이름</span><span class="lang-en">Name</span></label>
             <input id="cf-name" type="text" name="name" required>
           </div>
           <div>
-            <label class="field-label" for="cf-email">이메일</label>
+            <label class="field-label" for="cf-email"><span class="lang-ko">수신 이메일</span><span class="lang-en">Reply-to email</span></label>
             <input id="cf-email" type="email" name="email" required>
           </div>
           <div>
-            <label class="field-label" for="cf-message">메시지</label>
+            <label class="field-label" for="cf-message"><span class="lang-ko">메시지</span><span class="lang-en">Message</span></label>
             <textarea id="cf-message" name="message" required></textarea>
           </div>
-          <button type="submit">보내기</button>
+          <button type="submit"><span class="lang-ko">보내기</span><span class="lang-en">Send</span></button>
         </form>
         <p class="contact-status" id="contactStatus" hidden>
           감사합니다. 최대한 빠른 시일 내에 연락드리겠습니다.<br>
@@ -1761,11 +1885,32 @@
   </div>
 
   <script>
+    // -1. Language toggle (KO/EN) — class-based, persisted in localStorage
+    (function () {
+      const saved = localStorage.getItem('lang');
+      const lang = (saved === 'en' || saved === 'ko') ? saved : 'ko';
+      const apply = (l) => {
+        document.documentElement.dataset.lang = l;
+        document.documentElement.lang = l;
+        localStorage.setItem('lang', l);
+        document.querySelectorAll('[data-lang-btn]').forEach(b => {
+          const on = b.dataset.langBtn === l;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', String(on));
+        });
+      };
+      apply(lang);
+      document.querySelectorAll('[data-lang-btn]').forEach(b =>
+        b.addEventListener('click', () => apply(b.dataset.langBtn)));
+    })();
+
     // 0. Contact form — submit via fetch, show in-page thank-you (no redirect)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        // ponytail: flush in-progress Hangul IME composition so the last char isn't dropped
+        if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
         const res = await fetch(contactForm.action, {
           method: 'POST',
           body: new FormData(contactForm),
