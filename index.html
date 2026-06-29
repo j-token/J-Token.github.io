@@ -693,6 +693,76 @@
       font-size: 15px;
     }
 
+    /* Contact form */
+    .contact-form {
+      margin-top: 32px;
+      display: grid;
+      gap: 14px;
+      max-width: 560px;
+    }
+    .contact-form .field-label {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font-family: var(--sans);
+      font-size: 15px;
+      color: var(--fg);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 11px 13px;
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .contact-form button {
+      justify-self: start;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: transparent;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 11px 24px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .contact-form button:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+    .contact-status {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--soft);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.6;
+      border-radius: 0 4px 4px 0;
+    }
+    .contact-status .en {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     /* Footer — end of document */
     footer.colophon {
       margin-top: 72px;
@@ -1628,7 +1698,7 @@
         <ul class="contact-list">
           <li>
             <span class="label">Email</span>
-            <span class="value"><a href="mailto:cjm01115@naver.com">cjm01115@naver.com</a></span>
+            <span class="value"><a href="mailto:j.token.2001@gmail.com">j.token.2001@gmail.com</a></span>
           </li>
           <li>
             <span class="label">GitHub</span>
@@ -1643,6 +1713,27 @@
             <span class="value"><a href="https://j-token.itch.io/break-through">j-token.itch.io/break-through</a></span>
           </li>
         </ul>
+
+        <!-- ponytail: Formspree backend/email/spam; fetch() keeps user on page — lighter than the AJAX SDK. -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xojolqlb" method="POST">
+          <div>
+            <label class="field-label" for="cf-name">이름</label>
+            <input id="cf-name" type="text" name="name" required>
+          </div>
+          <div>
+            <label class="field-label" for="cf-email">이메일</label>
+            <input id="cf-email" type="email" name="email" required>
+          </div>
+          <div>
+            <label class="field-label" for="cf-message">메시지</label>
+            <textarea id="cf-message" name="message" required></textarea>
+          </div>
+          <button type="submit">보내기</button>
+        </form>
+        <p class="contact-status" id="contactStatus" hidden>
+          감사합니다. 최대한 빠른 시일 내에 연락드리겠습니다.<br>
+          <span class="en">Thank you. We'll get back to you as soon as possible.</span>
+        </p>
       </section>
 
     </main>
@@ -1670,6 +1761,25 @@
   </div>
 
   <script>
+    // 0. Contact form — submit via fetch, show in-page thank-you (no redirect)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          contactForm.hidden = true;
+          document.getElementById('contactStatus').hidden = false;
+        } else {
+          alert('전송에 실패했습니다. 잠시 후 다시 시도해주세요.');
+        }
+      });
+    }
+
     // 1. Scroll Fade-in Animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
