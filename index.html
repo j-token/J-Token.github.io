@@ -1238,7 +1238,7 @@
           <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
         </div>
         <span class="doc-no">Doc. No. JT-2026-05</span>
-        <span>Revision 03</span>
+        <span>Revision 04</span>
       </div>
     </header>
 
@@ -1248,14 +1248,14 @@
       <section id="about">
         <h2><span class="marker">§ 1</span>About</h2>
         <p class="lede lang-ko">
-          문제 해결을 위해 <em>협업의 가치</em>와 <em>기술적 깊이</em>를 중요하게 생각하는 풀스택 개발자입니다.
-          LLM이 세상에 막 나왔을 때부터 로컬 AI 서비스를 직접 운영해 왔고<br />
-          요즘은 AI 에이전트 도구를 직접 만드는 일에 몰두하고 있습니다.
+          웹, 앱, 서버를 모두 다루는 풀스택 개발자입니다.
+          LLM이 세상에 막 나왔을 때부터 로컬 AI 서비스를 직접 운영했고<br />
+          요즘은 AI 에이전트 도구를 직접 만듭니다.
         </p>
         <p class="lede lang-en">
-          A full-stack developer who values <em>collaboration</em> and <em>technical depth</em> in solving problems.
-          I've run my own local AI services since the very dawn of LLMs,<br />
-          and these days I'm absorbed in building AI agent tooling myself.
+          A full-stack developer working across web, apps, and servers.
+          I've run my own local AI services since LLMs first appeared,<br />
+          and these days I build AI agent tooling myself.
         </p>
         <p class="lede lang-ko">재미있어 보이는 건 참을 수 없습니다.</p>
         <p class="lede lang-en">If it looks fun, I can't resist it.</p>
@@ -1309,14 +1309,14 @@
             <h3>실시간 통신 &amp; 접근성</h3>
             <p>
               WebRTC · LiveKit · RTSP · PTZ, 그리고 실시간 음성 STT.
-              <span class="muted">티와이이엔지에서 Go + WebRTC로 RTSP 카메라 지연 30초 → 1초 단축.<br />개인 외주 사업으로 pion(Go WebRTC 프레임워크) 기반 rtsp2webrtc 구현 및 PTZ 카메라 원격 제어.<br /><code>pipecat-call</code>(전화 음성 에이전트), <code>langCAT</code>(화면공유 실시간 자막) 등 음성·자막 도구도 직접 제작.</span>
+              <span class="muted">티와이이엔지에서 Go + WebRTC로 RTSP 카메라 지연 30초 → 1초 단축.<br />개인 외주 사업으로 pion(Go WebRTC 프레임워크) 기반 rtsp2webrtc 구현 및 PTZ 카메라 원격 제어.<br /><code>pipecat-call</code>(전화 음성 에이전트), <code>RTA</code>(시스템 오디오 실시간 번역 자막) 등 음성·자막 도구도 직접 제작.</span>
             </p>
           </li>
           <li class="lang-en">
             <h3>Realtime Communication &amp; Accessibility</h3>
             <p>
               WebRTC · LiveKit · RTSP · PTZ, plus real-time speech STT.
-              <span class="muted">At TY-Eng, cut RTSP camera latency from 30s → 1s with Go + WebRTC.<br />As freelance work, built rtsp2webrtc on pion (the Go WebRTC framework) with remote PTZ camera control.<br />Also built voice &amp; caption tools myself — <code>pipecat-call</code> (a phone voice agent) and <code>langCAT</code> (real-time captions for screen sharing).</span>
+              <span class="muted">At TY-Eng, cut RTSP camera latency from 30s → 1s with Go + WebRTC.<br />As freelance work, built rtsp2webrtc on pion (the Go WebRTC framework) with remote PTZ camera control.<br />Also built voice &amp; caption tools myself — <code>pipecat-call</code> (a phone voice agent) and <code>RTA</code> (live system-audio translation subtitles).</span>
             </p>
           </li>
           <li class="lang-ko">
@@ -1359,20 +1359,6 @@
             <p>
               Built <strong>Break Through</strong>, a 3D timing-counter action game on Unity 6.3 URP.
               <span class="muted">See § 4 for details. Also developing <code>margin-godot</code>, a Godot + WebRTC multiplayer game, on the side.</span>
-            </p>
-          </li>
-          <li class="lang-ko">
-            <h3>AI × 금융</h3>
-            <p>
-              FastAPI + AI 자동매매 실험(<code>Cryptocurrency_with_ai</code>)에서 출발해,
-              <span class="muted">차트 패턴·피보나치 분석을 C++20으로 구현한 Bybit 자동매매 시스템 <code>prometheus</code>(ZeroMQ IPC)까지 확장.</span>
-            </p>
-          </li>
-          <li class="lang-en">
-            <h3>AI × Finance</h3>
-            <p>
-              Starting from a FastAPI + AI auto-trading experiment (<code>Cryptocurrency_with_ai</code>),
-              <span class="muted">expanded into <code>prometheus</code>, a Bybit auto-trading system implementing chart-pattern &amp; Fibonacci analysis in C++20 (ZeroMQ IPC).</span>
             </p>
           </li>
           <li class="lang-ko">
@@ -1461,11 +1447,6 @@
               <td class="desc"><span class="lang-ko">Pipecat · Soniox · Cartesia 기반 전화 음성 에이전트 서버 (FastAPI, DTMF 키패드 수집)</span><span class="lang-en">Phone voice-agent server on Pipecat · Soniox · Cartesia (FastAPI, DTMF keypad capture)</span></td>
             </tr>
             <tr>
-              <td class="name"><span class="private-name">langCAT</span></td>
-              <td class="role author priv">Author · Private</td>
-              <td class="desc"><span class="lang-ko">화면 공유 오디오를 Deepgram STT + Gemini 번역으로 실시간 이중 자막 표시</span><span class="lang-en">Real-time dual subtitles for screen-share audio via Deepgram STT + Gemini translation</span></td>
-            </tr>
-            <tr>
               <td class="name"><span class="private-name">RTA</span></td>
               <td class="role author priv">Author · Private</td>
               <td class="desc"><span class="lang-ko">Real-Time Audio Translator — Electron + Soniox로 시스템 오디오 실시간 번역 / 자막 오버레이</span><span class="lang-en">Real-Time Audio Translator — live system-audio translation / subtitle overlay with Electron + Soniox</span></td>
@@ -1494,21 +1475,8 @@
               <td class="desc"><span class="lang-ko">Godot + WebRTC 기반 멀티플레이어 게임 (개발 중)</span><span class="lang-en">Godot + WebRTC multiplayer game (in development)</span></td>
             </tr>
 
-            <!-- D. AI × Finance -->
-            <tr class="group"><td colspan="3"><span class="cat">§ 3-D · AI × Finance</span></td></tr>
-            <tr>
-              <td class="name"><span class="private-name">prometheus</span></td>
-              <td class="role author priv">Author · Private</td>
-              <td class="desc"><span class="lang-ko">C++20 Bybit 자동매매 시스템 — 차트 패턴 인식 · 피보나치 분석, ZeroMQ IPC, FastAPI</span><span class="lang-en">C++20 Bybit auto-trading system — chart-pattern recognition · Fibonacci analysis, ZeroMQ IPC, FastAPI</span></td>
-            </tr>
-            <tr>
-              <td class="name"><a href="https://github.com/j-token/Cryptocurrency_with_ai">Cryptocurrency_with_ai</a></td>
-              <td class="role author">Author</td>
-              <td class="desc"><span class="lang-ko">FastAPI + AI 자동매매 실험</span><span class="lang-en">FastAPI + AI auto-trading experiment</span></td>
-            </tr>
-
-            <!-- E. Web & Apps -->
-            <tr class="group"><td colspan="3"><span class="cat">§ 3-E · Web &amp; Apps</span></td></tr>
+            <!-- D. Web & Apps -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-D · Web &amp; Apps</span></td></tr>
             <tr>
               <td class="name"><a href="https://abyssal-moonlight-production.up.railway.app/ko" target="_blank" rel="noopener">Abyssal Moonlight</a></td>
               <td class="role author">Author</td>
@@ -1518,11 +1486,6 @@
               <td class="name"><a href="https://github.com/j-token/x-twitter">x-twitter</a></td>
               <td class="role author">Author</td>
               <td class="desc"><span class="lang-ko">Bilibili · Twitter/X 미디어 게시글을 Discord 채널로 자동 포스팅하는 봇 (Node · PostgreSQL)</span><span class="lang-en">A bot that auto-posts Bilibili · Twitter/X media posts to Discord channels (Node · PostgreSQL)</span></td>
-            </tr>
-            <tr>
-              <td class="name"><span class="private-name">karaoke · Subkara</span></td>
-              <td class="role author priv">Author · Private</td>
-              <td class="desc"><span class="lang-ko">Expo + Supabase 기반 서브컬쳐 노래방 검색 MVP</span><span class="lang-en">Subculture karaoke-search MVP on Expo + Supabase</span></td>
             </tr>
             <tr>
               <td class="name"><a href="https://github.com/j-token/extract-text-from-json-by-gjson">extract-text-from-json-by-gjson</a></td>
@@ -1535,16 +1498,16 @@
               <td class="desc"><span class="lang-ko">Supabase 네이버 커스텀 OAuth 프로바이더 샘플</span><span class="lang-en">Sample Supabase Naver custom OAuth provider</span></td>
             </tr>
 
-            <!-- F. Research -->
-            <tr class="group"><td colspan="3"><span class="cat">§ 3-F · Research</span></td></tr>
+            <!-- E. Research -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-E · Research</span></td></tr>
             <tr>
               <td class="name"><span class="private-name">single-bit</span></td>
               <td class="role author priv">Author · Private</td>
               <td class="desc"><span class="lang-ko">Qwen3-8B 1-bit Post-Training Quantization 파이프라인 연구 — Hadamard rotation · GPTQ · BLoRA</span><span class="lang-en">Research on a Qwen3-8B 1-bit post-training quantization pipeline — Hadamard rotation · GPTQ · BLoRA</span></td>
             </tr>
 
-            <!-- G. Open-source Contributions -->
-            <tr class="group"><td colspan="3"><span class="cat">§ 3-G · Open-source Contributions</span></td></tr>
+            <!-- F. Open-source Contributions -->
+            <tr class="group"><td colspan="3"><span class="cat">§ 3-F · Open-source Contributions</span></td></tr>
             <tr>
               <td class="name"><a href="https://github.com/alasdairforsythe/tokenmonster">alasdairforsythe/tokenmonster</a></td>
               <td class="role">Contributor (PR)</td>
@@ -1816,9 +1779,30 @@
         </div>
       </section>
 
-      <!-- § 7. Contact -->
+      <!-- § 7. Competitions -->
+      <section id="competitions">
+        <h2><span class="marker">§ 7</span>Competitions</h2>
+        <p class="lede lang-ko">
+          <strong>AI_TOP_100 (CAMPUS) 예선 — 전체 4위 (229점)</strong>
+        </p>
+        <p class="lede lang-en">
+          <strong>AI_TOP_100 (CAMPUS) Qualifier — 4th place overall (229 pts)</strong>
+        </p>
+        <p class="lang-ko">
+          원하는 AI 도구로 문제를 풀어 겨루는 대회입니다.<br />
+          3월 예선 당시 Claude Opus 4.6으로 작성한 답안을 저장해 뒀다가<br />
+          4월 랭킹 산출 기간에 그대로 제출했습니다.
+        </p>
+        <p class="lang-en">
+          A competition where participants solve problems with any AI tools of their choice.<br />
+          I saved the answers I wrote with Claude Opus 4.6 during the March qualifier<br />
+          and submitted them as-is during the April ranking period.
+        </p>
+      </section>
+
+      <!-- § 8. Contact -->
       <section id="contact">
-        <h2><span class="marker">§ 7</span>Contact</h2>
+        <h2><span class="marker">§ 8</span>Contact</h2>
         <ul class="contact-list">
           <li>
             <span class="label">Email</span>
