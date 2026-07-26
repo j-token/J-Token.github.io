@@ -1198,6 +1198,9 @@
       }
 
       .cta-button, .print-menu, footer.colophon { display: none !important; }
+
+      /* Hide Contact section when printing / saving as PDF */
+      section#contact { display: none !important; }
       
       .note { 
         background: transparent !important; 
@@ -1782,6 +1785,20 @@
       <!-- § 7. Competitions -->
       <section id="competitions">
         <h2><span class="marker">§ 7</span>Competitions</h2>
+        <p class="lede lang-ko">
+          <strong>NYPC 2026 Master Track 예선 — 3위 (팀 AI 바보들)</strong>
+        </p>
+        <p class="lede lang-en">
+          <strong>NYPC 2026 Master Track Qualifier — 3rd place (Team "AI 바보들")</strong>
+        </p>
+        <p class="lang-ko">
+          게임을 플레이하는 AI 에이전트를 만들어 승률로 겨루는 대회입니다.<br />
+          GNN + PPO 강화학습 에이전트로 예선 승률 R1 98% · R2 92%를 기록했습니다.
+        </p>
+        <p class="lang-en">
+          A competition where teams build AI agents that play a game, ranked by win rate.<br />
+          Our GNN + PPO reinforcement-learning agent recorded R1 98% · R2 92% win rates in the qualifier.
+        </p>
         <p class="lede lang-ko">
           <strong>AI_TOP_100 (CAMPUS) 예선 — 전체 4위 (229점)</strong>
         </p>
