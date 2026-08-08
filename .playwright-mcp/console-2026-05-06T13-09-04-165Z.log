@@ -1,0 +1,8 @@
+[    2396ms] [WARNING] [Live2DModel(uninitialized)] options.autoInteract is deprecated since v0.5.0, use autoHitTest and autoFocus instead. @ https://abyssal-moonlight-production.up.railway.app/_next/static/chunks/0i9fwe9wy58ii.js:0
+[    2508ms] [LOG] [CSM][I]Live2D Cubism Core version: 05.01.0000 (83951616)
+ @ https://abyssal-moonlight-production.up.railway.app/_next/static/chunks/0i9fwe9wy58ii.js:0
+[    2508ms] [LOG] [CSM][I]CubismFramework.startUp() is complete.
+ @ https://abyssal-moonlight-production.up.railway.app/_next/static/chunks/0i9fwe9wy58ii.js:0
+[    2509ms] [LOG] [CSM][I]CubismFramework.initialize() is complete.
+ @ https://abyssal-moonlight-production.up.railway.app/_next/static/chunks/0i9fwe9wy58ii.js:0
+[    6559ms] [LOG] Live2D Cubism SDK Core Version 5.1.0 @ https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js:8

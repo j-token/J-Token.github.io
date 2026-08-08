@@ -1,0 +1,87 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "深海月光 — Abyssal Moonlight prologue ピクセルアート × Live2D 深海ビジュアルノベル" [ref=e4] [cursor=pointer]:
+        - /url: /ja
+        - generic [ref=e5]: 深海月光 — Abyssal Moonlight prologue
+        - generic [ref=e6]: ピクセルアート × Live2D 深海ビジュアルノベル
+      - generic [ref=e7]:
+        - navigation [ref=e8]:
+          - link "STORY" [ref=e9] [cursor=pointer]:
+            - /url: /ja#story
+          - generic [ref=e10]: ·
+          - link "CHARS" [ref=e11] [cursor=pointer]:
+            - /url: /ja#characters
+          - generic [ref=e12]: ·
+          - link "GALLERY" [ref=e13] [cursor=pointer]:
+            - /url: /ja#gallery
+        - generic [ref=e14]:
+          - generic [ref=e15]: "言語:"
+          - generic [ref=e16]:
+            - link "한국어" [ref=e17] [cursor=pointer]:
+              - /url: /ko
+            - generic [ref=e18]: ·
+          - generic [ref=e19]:
+            - link "English" [ref=e20] [cursor=pointer]:
+              - /url: /en
+            - generic [ref=e21]: ·
+          - link "日本語" [ref=e23] [cursor=pointer]:
+            - /url: /ja
+  - main [ref=e24]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - paragraph [ref=e28]: 深海月光 — Abyssal Moonlight
+        - heading "深海の都市、アビサリア。" [level=1] [ref=e29]
+        - paragraph [ref=e30]: 魚人になれなかった者たちの闇のなかで、ただ一人のために生きる物語。
+        - generic [ref=e31]:
+          - link "▶ プロローグをプレイする" [ref=e32] [cursor=pointer]:
+            - /url: https://novelgame.jp/games/show/13825
+          - link "ストーリーを読む" [ref=e33] [cursor=pointer]:
+            - /url: /ja#story
+      - generic [ref=e34]:
+        - img "Calen" [ref=e37]
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: CALEN — LIVE2D
+          - paragraph [ref=e40]: マウスを動かすと視線が追従します。
+    - generic [ref=e42]:
+      - heading "STORY" [level=2] [ref=e43]
+      - article [ref=e44]:
+        - paragraph [ref=e46]:
+          - text: 魚人への変異を贖えなかった者たちは番号を与えられ、深い闇の底で働く。
+          - text: ほとんど何も感じない少年
+          - strong [ref=e47]: シオン (Shion)
+          - text: と、彼の唯一の生きる理由である
+          - strong [ref=e48]: カレン (Calen)
+          - text: の物語。
+    - generic [ref=e50]:
+      - heading "CHARACTERS" [level=2] [ref=e51]
+      - generic [ref=e52]:
+        - article [ref=e53]:
+          - img "カレン (Calen)" [ref=e55]
+          - generic [ref=e56]:
+            - heading "カレン (Calen)" [level=3] [ref=e57]
+            - paragraph [ref=e59]: シオンの傍にいてくれるただ一人。感覚を失った彼が「生きる理由」と呼ぶ存在。
+        - article [ref=e60]:
+          - img "シオン (Shion)" [ref=e62]
+          - generic [ref=e63]:
+            - heading "シオン (Shion)" [level=3] [ref=e64]
+            - paragraph [ref=e66]: 魚人になれぬまま番号で呼ばれる労働者。ほとんど何も感じないが、カレンだけは例外。
+    - generic [ref=e68]:
+      - heading "GALLERY" [level=2] [ref=e69]
+      - generic [ref=e70]:
+        - img "gallery.image1" [ref=e72]
+        - img "gallery.image2" [ref=e74]
+        - img "gallery.image3" [ref=e76]
+  - contentinfo [ref=e77]:
+    - generic [ref=e78]:
+      - generic [ref=e79]: © Garurai
+      - generic [ref=e80]: 深海月光
+    - generic [ref=e81]:
+      - text: "Pixel fonts:"
+      - link "Fusion Pixel Font" [ref=e82] [cursor=pointer]:
+        - /url: https://github.com/TakWolf/fusion-pixel-font
+      - text: © TakWolf, including Galmuri © quiple, Ark Pixel © TakWolf, Cubic 11 © ACh-K — licensed under
+      - link "SIL Open Font License 1.1" [ref=e83] [cursor=pointer]:
+        - /url: https://openfontlicense.org/
+      - text: .
+  - alert [ref=e84]

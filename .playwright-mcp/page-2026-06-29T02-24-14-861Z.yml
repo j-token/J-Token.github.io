@@ -1,0 +1,572 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - heading "j-token" [level=1] [ref=e5]
+        - generic [ref=e6]: Full-Stack Developer · Portfolio Document
+      - generic [ref=e7]:
+        - group "Language" [ref=e8]:
+          - button "KO" [ref=e9] [cursor=pointer]
+          - button "EN" [active] [pressed] [ref=e10] [cursor=pointer]
+        - generic [ref=e11]: Doc. No. JT-2026-05
+        - text: Revision 03
+    - main [ref=e12]:
+      - generic [ref=e13]:
+        - heading "§ 1 About" [level=2] [ref=e14]:
+          - generic [ref=e15]: § 1
+          - text: About
+        - paragraph [ref=e457]:
+          - text: A full-stack developer who values
+          - emphasis [ref=e458]: collaboration
+          - text: and
+          - emphasis [ref=e459]: technical depth
+          - text: in solving problems. I've run my own local AI services since the very dawn of LLMs,
+          - text: and these days I'm absorbed in building AI agent tooling myself.
+        - paragraph [ref=e460]: If it looks fun, I can't resist it.
+        - generic [ref=e461]:
+          - generic [ref=e462]: Disclosure
+          - text: Of the projects in this document,
+          - strong [ref=e463]:
+            - text: every work except the robot-control implementation at RB-Ware (§ 2-4)
+            - text: was built together with AI coding partners (Claude · GPT · Codex · opencode).
+          - text: AI is the tool I wield best, and I take
+          - strong [ref=e464]: full responsibility
+          - text: for the quality of the output and the decisions behind it.
+      - generic [ref=e24]:
+        - heading "§ 2 Interests" [level=2] [ref=e25]:
+          - generic [ref=e26]: § 2
+          - text: Interests
+        - list [ref=e27]:
+          - listitem [ref=e465]:
+            - heading "AI Agents & Local LLMs" [level=3] [ref=e466]
+            - paragraph [ref=e467]:
+              - text: Ran a
+              - strong [ref=e468]: local LLM × text2sql
+              - text: service as a solo business right after ChatGPT's 2022 debut.
+              - text: Brought then-public models like RWKV-4 and LLaMA 1·2 into real production.
+              - generic [ref=e469]:
+                - text: Contributed PRs to
+                - code [ref=e470]: alasdairforsythe/tokenmonster
+                - text: (a Go SOTA tokenizer) and
+                - code [ref=e471]: backnotprop/plannotator
+                - text: (an agent planning & review tool) as open source,
+                - text: and recently I build MCP & plugin ecosystem tools myself —
+                - code [ref=e472]: claude/codex-workflow-kit
+                - text: ","
+                - code [ref=e473]: codex-mcp
+                - text: ","
+                - code [ref=e474]: claude-agent-mcp
+                - text: ","
+                - code [ref=e475]: claude-sync
+                - text: ","
+                - code [ref=e476]: opencode-reviewer
+                - text: ","
+                - code [ref=e477]: email-skills
+                - text: .
+                - text: I also researched
+                - code [ref=e478]: single-bit
+                - text: ", a quantization pipeline that compresses Qwen3-8B down to 1-bit."
+          - listitem [ref=e479]:
+            - heading "Full-Stack TypeScript" [level=3] [ref=e480]
+            - paragraph [ref=e481]:
+              - text: NestJS · React / Next.js · React Native / Expo · SvelteKit.
+              - generic [ref=e482]:
+                - text: Applied in production at Pando Platform (Gen AI barrier-free kiosk), NPL Solution (Better Auth system),
+                - text: and Playmore (Amigo app payments & homepage renewal).
+          - listitem [ref=e483]:
+            - heading "Realtime Communication & Accessibility" [level=3] [ref=e484]
+            - paragraph [ref=e485]:
+              - text: WebRTC · LiveKit · RTSP · PTZ, plus real-time speech STT.
+              - generic [ref=e486]:
+                - text: At TY-Eng, cut RTSP camera latency from 30s → 1s with Go + WebRTC.
+                - text: As freelance work, built rtsp2webrtc on pion (the Go WebRTC framework) with remote PTZ camera control.
+                - text: Also built voice & caption tools myself —
+                - code [ref=e487]: pipecat-call
+                - text: (a phone voice agent) and
+                - code [ref=e488]: langCAT
+                - text: (real-time captions for screen sharing).
+          - listitem [ref=e489]:
+            - heading "Collaborative Robots & Industrial Automation Solo Build" [level=3] [ref=e490]:
+              - text: Collaborative Robots & Industrial Automation
+              - generic [ref=e491]: Solo Build
+            - paragraph [ref=e492]:
+              - text: At
+              - strong [ref=e493]: RB-Ware (Korea's No. 1 in collaborative-robot welding automation, a Rainbow Robotics partner)
+              - text: ", built the robot-control app in Flutter and the teaching & simulation UI in Unity."
+              - generic [ref=e494]:
+                - text: Implemented the robot ↔ controller real-time TCP / MQTT protocol myself.
+                - text: The
+                - strong [ref=e495]: only AI-free implementation
+                - text: in this portfolio.
+          - listitem [ref=e496]:
+            - heading "Authentication & OAuth Integration" [level=3] [ref=e497]
+            - paragraph [ref=e498]:
+              - text: Naver · Kakao · Google sign-in built on Better Auth + NestJS + PostgreSQL.
+              - generic [ref=e499]:
+                - text: Published a Supabase Naver custom OAuth provider (
+                - code [ref=e500]: supabase-custom-oauth-test
+                - text: ).
+          - listitem [ref=e501]:
+            - heading "Game Development" [level=3] [ref=e502]
+            - paragraph [ref=e503]:
+              - text: Built
+              - strong [ref=e504]: Break Through
+              - text: ", a 3D timing-counter action game on Unity 6.3 URP."
+              - generic [ref=e505]:
+                - text: See § 4 for details. Also developing
+                - code [ref=e506]: margin-godot
+                - text: ", a Godot + WebRTC multiplayer game, on the side."
+          - listitem [ref=e507]:
+            - heading "AI × Finance" [level=3] [ref=e508]
+            - paragraph [ref=e509]:
+              - text: Starting from a FastAPI + AI auto-trading experiment (
+              - code [ref=e510]: Cryptocurrency_with_ai
+              - text: ),
+              - generic [ref=e511]:
+                - text: expanded into
+                - code [ref=e512]: prometheus
+                - text: ", a Bybit auto-trading system implementing chart-pattern & Fibonacci analysis in C++20 (ZeroMQ IPC)."
+          - listitem [ref=e513]:
+            - heading "Native Desktop & Graphics" [level=3] [ref=e514]
+            - paragraph [ref=e515]:
+              - text: Cross-platform desktop & graphics apps with Tauri v2 · Rust · WebGPU.
+              - generic [ref=e516]:
+                - code [ref=e517]: project-gpu
+                - text: ", a WebGPU drawing engine powered by a 16,384² tiled canvas and GPU compute shaders;"
+                - code [ref=e518]: claude-sync
+                - text: ", a settings-sync app with secret masking & snapshot restore; and more."
+      - generic [ref=e82]:
+        - heading "§ 3 Selected Work" [level=2] [ref=e83]:
+          - generic [ref=e84]: § 3
+          - text: Selected Work
+        - table [ref=e85]:
+          - rowgroup [ref=e86]:
+            - row "Project Role Description" [ref=e87]:
+              - columnheader "Project" [ref=e88]
+              - columnheader "Role" [ref=e89]
+              - columnheader "Description" [ref=e90]
+          - rowgroup [ref=e91]:
+            - row "§ 3-A · AI Agent & Developer Tooling" [ref=e92]:
+              - cell "§ 3-A · AI Agent & Developer Tooling" [ref=e93]
+            - row "claude-workflow-kit / codex-workflow-kit Author Workflow plugins for Claude Code · Codex — turn rough requests into reviewable spec / implementation / verification stages (this portfolio was built with this kit too)" [ref=e519]:
+              - cell "claude-workflow-kit / codex-workflow-kit" [ref=e95]:
+                - link "claude-workflow-kit" [ref=e96] [cursor=pointer]:
+                  - /url: https://github.com/j-token/j-token-claude-workflow-kit
+                - text: /
+                - link "codex-workflow-kit" [ref=e97] [cursor=pointer]:
+                  - /url: https://github.com/j-token/j-token-codex-workflow-kit
+              - cell "Author" [ref=e98]
+              - cell "Workflow plugins for Claude Code · Codex — turn rough requests into reviewable spec / implementation / verification stages (this portfolio was built with this kit too)" [ref=e520]
+            - row "codex-mcp Author MCP server on the OpenAI Codex SDK — ChatGPT OAuth login, no API key needed" [ref=e521]:
+              - cell "codex-mcp" [ref=e101]:
+                - link "codex-mcp" [ref=e102] [cursor=pointer]:
+                  - /url: https://github.com/j-token/codex-mcp
+              - cell "Author" [ref=e103]
+              - cell "MCP server on the OpenAI Codex SDK — ChatGPT OAuth login, no API key needed" [ref=e522]
+            - row "codex-plugin Author OpenAI Codex integration plugin for Claude Code (structured JSON output)" [ref=e523]:
+              - cell "codex-plugin" [ref=e106]:
+                - link "codex-plugin" [ref=e107] [cursor=pointer]:
+                  - /url: https://github.com/j-token/codex-plugin
+              - cell "Author" [ref=e108]
+              - cell "OpenAI Codex integration plugin for Claude Code (structured JSON output)" [ref=e524]
+            - row "claude-agent-mcp Author MCP server wrapping the Claude Agent SDK — OAuth auth, no API key needed" [ref=e525]:
+              - cell "claude-agent-mcp" [ref=e111]:
+                - link "claude-agent-mcp" [ref=e112] [cursor=pointer]:
+                  - /url: https://github.com/j-token/claude-agent-mcp
+              - cell "Author" [ref=e113]
+              - cell "MCP server wrapping the Claude Agent SDK — OAuth auth, no API key needed" [ref=e526]
+            - row "claude-sync Author Claude Code settings sync on Rust · Tauri v2 — GUI + CLI, automatic secret masking, snapshot restore" [ref=e527]:
+              - cell "claude-sync" [ref=e116]:
+                - link "claude-sync" [ref=e117] [cursor=pointer]:
+                  - /url: https://github.com/j-token/claude-sync
+              - cell "Author" [ref=e118]
+              - cell "Claude Code settings sync on Rust · Tauri v2 — GUI + CLI, automatic secret masking, snapshot restore" [ref=e528]
+            - row "dm-plz Author An MCP that forwards Claude Code notifications to Telegram / Discord" [ref=e529]:
+              - cell "dm-plz" [ref=e121]:
+                - link "dm-plz" [ref=e122] [cursor=pointer]:
+                  - /url: https://github.com/j-token/dm-plz
+              - cell "Author" [ref=e123]
+              - cell "An MCP that forwards Claude Code notifications to Telegram / Discord" [ref=e530]
+            - row "easy-opencode Author An LSP + AST-grep plugin bundle to get started with opencode easily" [ref=e531]:
+              - cell "easy-opencode" [ref=e126]:
+                - link "easy-opencode" [ref=e127] [cursor=pointer]:
+                  - /url: https://github.com/j-token/easy-opencode
+              - cell "Author" [ref=e128]
+              - cell "An LSP + AST-grep plugin bundle to get started with opencode easily" [ref=e532]
+            - row "opencode-reviewer Author A VSCode extension for leaving drag-and-comment feedback on markdown documents" [ref=e533]:
+              - cell "opencode-reviewer" [ref=e131]:
+                - link "opencode-reviewer" [ref=e132] [cursor=pointer]:
+                  - /url: https://github.com/j-token/opencode-reviewer
+              - cell "Author" [ref=e133]
+              - cell "A VSCode extension for leaving drag-and-comment feedback on markdown documents" [ref=e534]
+            - row "email-skills Author Email Protocol — an MCP & skill for AI to search mailboxes read-only over POP3 / IMAP" [ref=e535]:
+              - cell "email-skills" [ref=e136]:
+                - link "email-skills" [ref=e137] [cursor=pointer]:
+                  - /url: https://github.com/j-token/email-skills
+              - cell "Author" [ref=e138]
+              - cell "Email Protocol — an MCP & skill for AI to search mailboxes read-only over POP3 / IMAP" [ref=e536]
+            - row "media-mcp-agents Author · Private Audio · video · image · PDF analysis MCP server on FastMCP + Gemini" [ref=e537]:
+              - cell "media-mcp-agents" [ref=e141]
+              - cell "Author · Private" [ref=e142]
+              - cell "Audio · video · image · PDF analysis MCP server on FastMCP + Gemini" [ref=e538]
+            - row "§ 3-B · Realtime, Voice & Accessibility" [ref=e144]:
+              - cell "§ 3-B · Realtime, Voice & Accessibility" [ref=e145]
+            - row "pipecat-call Author · Private Phone voice-agent server on Pipecat · Soniox · Cartesia (FastAPI, DTMF keypad capture)" [ref=e539]:
+              - cell "pipecat-call" [ref=e147]
+              - cell "Author · Private" [ref=e148]
+              - cell "Phone voice-agent server on Pipecat · Soniox · Cartesia (FastAPI, DTMF keypad capture)" [ref=e540]
+            - row "langCAT Author · Private Real-time dual subtitles for screen-share audio via Deepgram STT + Gemini translation" [ref=e541]:
+              - cell "langCAT" [ref=e151]
+              - cell "Author · Private" [ref=e152]
+              - cell "Real-time dual subtitles for screen-share audio via Deepgram STT + Gemini translation" [ref=e542]
+            - row "RTA Author · Private Real-Time Audio Translator — live system-audio translation / subtitle overlay with Electron + Soniox" [ref=e543]:
+              - cell "RTA" [ref=e155]
+              - cell "Author · Private" [ref=e156]
+              - cell "Real-Time Audio Translator — live system-audio translation / subtitle overlay with Electron + Soniox" [ref=e544]
+            - row "play-tag Author Gyeongdo — an offline BLE team-detection tag game app in Flutter (Supabase Realtime)" [ref=e545]:
+              - cell "play-tag" [ref=e159]:
+                - link "play-tag" [ref=e160] [cursor=pointer]:
+                  - /url: https://github.com/j-token/play-tag
+              - cell "Author" [ref=e161]
+              - cell "Gyeongdo — an offline BLE team-detection tag game app in Flutter (Supabase Realtime)" [ref=e546]
+            - row "§ 3-C · Graphics, Games & Engines" [ref=e163]:
+              - cell "§ 3-C · Graphics, Games & Engines" [ref=e164]
+            - row "project-gpu · G-Canvas Author · Private WebGPU drawing engine — Tauri v2 · Rust · WGSL, 16,384² tiled canvas and GPU compute shaders" [ref=e547]:
+              - cell "project-gpu · G-Canvas" [ref=e166]
+              - cell "Author · Private" [ref=e167]
+              - cell "WebGPU drawing engine — Tauri v2 · Rust · WGSL, 16,384² tiled canvas and GPU compute shaders" [ref=e548]
+            - row "Break Through Author Unity 6.3 URP 3D timing-counter action (see § 4)" [ref=e549]:
+              - cell "Break Through" [ref=e170]
+              - cell "Author" [ref=e171]
+              - cell "Unity 6.3 URP 3D timing-counter action (see § 4)" [ref=e550]
+            - row "margin-godot Author · Private Godot + WebRTC multiplayer game (in development)" [ref=e551]:
+              - cell "margin-godot" [ref=e174]
+              - cell "Author · Private" [ref=e175]
+              - cell "Godot + WebRTC multiplayer game (in development)" [ref=e552]
+            - row "§ 3-D · AI × Finance" [ref=e177]:
+              - cell "§ 3-D · AI × Finance" [ref=e178]
+            - row "prometheus Author · Private C++20 Bybit auto-trading system — chart-pattern recognition · Fibonacci analysis, ZeroMQ IPC, FastAPI" [ref=e553]:
+              - cell "prometheus" [ref=e180]
+              - cell "Author · Private" [ref=e181]
+              - cell "C++20 Bybit auto-trading system — chart-pattern recognition · Fibonacci analysis, ZeroMQ IPC, FastAPI" [ref=e554]
+            - row "Cryptocurrency_with_ai Author FastAPI + AI auto-trading experiment" [ref=e555]:
+              - cell "Cryptocurrency_with_ai" [ref=e184]:
+                - link "Cryptocurrency_with_ai" [ref=e185] [cursor=pointer]:
+                  - /url: https://github.com/j-token/Cryptocurrency_with_ai
+              - cell "Author" [ref=e186]
+              - cell "FastAPI + AI auto-trading experiment" [ref=e556]
+            - row "§ 3-E · Web & Apps" [ref=e188]:
+              - cell "§ 3-E · Web & Apps" [ref=e189]
+            - row "Abyssal Moonlight Author Indie-game fansite with Next.js 16 + Live2D + multilingual CMS (see § 5)" [ref=e557]:
+              - cell "Abyssal Moonlight" [ref=e191]:
+                - link "Abyssal Moonlight" [ref=e192] [cursor=pointer]:
+                  - /url: https://abyssal-moonlight-production.up.railway.app/ko
+              - cell "Author" [ref=e193]
+              - cell "Indie-game fansite with Next.js 16 + Live2D + multilingual CMS (see § 5)" [ref=e558]
+            - row "x-twitter Author A bot that auto-posts Bilibili · Twitter/X media posts to Discord channels (Node · PostgreSQL)" [ref=e559]:
+              - cell "x-twitter" [ref=e196]:
+                - link "x-twitter" [ref=e197] [cursor=pointer]:
+                  - /url: https://github.com/j-token/x-twitter
+              - cell "Author" [ref=e198]
+              - cell "A bot that auto-posts Bilibili · Twitter/X media posts to Discord channels (Node · PostgreSQL)" [ref=e560]
+            - row "karaoke · Subkara Author · Private Subculture karaoke-search MVP on Expo + Supabase" [ref=e561]:
+              - cell "karaoke · Subkara" [ref=e201]
+              - cell "Author · Private" [ref=e202]
+              - cell "Subculture karaoke-search MVP on Expo + Supabase" [ref=e562]
+            - row "extract-text-from-json-by-gjson Author A Go CLI that extracts values from JSON via GJSON expressions and saves them as TXT" [ref=e563]:
+              - cell "extract-text-from-json-by-gjson" [ref=e205]:
+                - link "extract-text-from-json-by-gjson" [ref=e206] [cursor=pointer]:
+                  - /url: https://github.com/j-token/extract-text-from-json-by-gjson
+              - cell "Author" [ref=e207]
+              - cell "A Go CLI that extracts values from JSON via GJSON expressions and saves them as TXT" [ref=e564]
+            - row "supabase-custom-oauth-test Author Sample Supabase Naver custom OAuth provider" [ref=e565]:
+              - cell "supabase-custom-oauth-test" [ref=e210]:
+                - link "supabase-custom-oauth-test" [ref=e211] [cursor=pointer]:
+                  - /url: https://github.com/j-token/supabase-custom-oauth-test
+              - cell "Author" [ref=e212]
+              - cell "Sample Supabase Naver custom OAuth provider" [ref=e566]
+            - row "§ 3-F · Research" [ref=e214]:
+              - cell "§ 3-F · Research" [ref=e215]
+            - row "single-bit Author · Private Research on a Qwen3-8B 1-bit post-training quantization pipeline — Hadamard rotation · GPTQ · BLoRA" [ref=e567]:
+              - cell "single-bit" [ref=e217]
+              - cell "Author · Private" [ref=e218]
+              - cell "Research on a Qwen3-8B 1-bit post-training quantization pipeline — Hadamard rotation · GPTQ · BLoRA" [ref=e568]
+            - row "§ 3-G · Open-source Contributions" [ref=e220]:
+              - cell "§ 3-G · Open-source Contributions" [ref=e221]
+            - row "alasdairforsythe/tokenmonster Contributor (PR) Go-based SOTA tokenizer — contributed during my local LLM × text2sql days" [ref=e569]:
+              - cell "alasdairforsythe/tokenmonster" [ref=e223]:
+                - link "alasdairforsythe/tokenmonster" [ref=e224] [cursor=pointer]:
+                  - /url: https://github.com/alasdairforsythe/tokenmonster
+              - cell "Contributor (PR)" [ref=e225]
+              - cell "Go-based SOTA tokenizer — contributed during my local LLM × text2sql days" [ref=e570]
+            - row "backnotprop/plannotator Contributor (PR) AI coding-agent planning & code-review tool" [ref=e571]:
+              - cell "backnotprop/plannotator" [ref=e228]:
+                - link "backnotprop/plannotator" [ref=e229] [cursor=pointer]:
+                  - /url: https://github.com/backnotprop/plannotator
+              - cell "Contributor (PR)" [ref=e230]
+              - cell "AI coding-agent planning & code-review tool" [ref=e572]
+            - row "pi-web-providers Contributor Multi-provider web extension for the pi agent — search · contents · answer · research routing" [ref=e573]:
+              - cell "pi-web-providers" [ref=e233]:
+                - link "pi-web-providers" [ref=e234] [cursor=pointer]:
+                  - /url: https://github.com/j-token/pi-web-providers
+              - cell "Contributor" [ref=e235]
+              - cell "Multi-provider web extension for the pi agent — search · contents · answer · research routing" [ref=e574]
+      - generic [ref=e237]:
+        - heading "§ 4 Game — Break Through" [level=2] [ref=e238]:
+          - generic [ref=e239]: § 4
+          - text: Game — Break Through
+        - paragraph [ref=e575]: A 3D timing-counter action game on Unity 6.3 URP. The black-and-white pixel-outline style is implemented with a custom shader.
+        - generic [ref=e241]:
+          - generic [ref=e242]: Unity 6.3
+          - generic [ref=e243]: URP
+          - generic [ref=e244]: C#
+          - generic [ref=e245]: ShaderGraph
+          - generic [ref=e246]: Aseprite
+          - generic [ref=e247]: Action
+          - generic [ref=e248]: HTML5
+        - generic [ref=e249]:
+          - figure "Fig. 1 — Title Screen" [ref=e250]:
+            - button "Break Through — 타이틀 화면, BREAK THROUGH 로고와 START 버튼, 기본 자세의 플레이어 캐릭터" [ref=e251]
+            - generic [ref=e252]: Fig. 1 — Title Screen
+          - figure "Fig. 2 — Round Start" [ref=e253]:
+            - button "Break Through — ROUND 1 오버레이 아래에서 플레이어가 적과 대치하는 장면" [ref=e254]
+            - generic [ref=e255]: Fig. 2 — Round Start
+          - figure "Fig. 3 — Combat & Debris" [ref=e256]:
+            - button "Break Through — 실제 전투 장면, 실루엣 플레이어가 파편을 흩뿌리며 이동" [ref=e257]
+            - generic [ref=e258]: Fig. 3 — Combat & Debris
+          - figure "Fig. 4 — Game Over" [ref=e259]:
+            - button "Break Through — GAME OVER, REACHED ROUND 1 텍스트와 RESTART 버튼" [ref=e260]
+            - generic [ref=e261]: Fig. 4 — Game Over
+          - figure "Fig. 5 — Punch & Shatter Effect" [ref=e262]:
+            - button "Break Through — 플레이어가 펀치를 내지르며 오브젝트 파편이 비산하는 장면" [ref=e263]
+            - generic [ref=e264]: Fig. 5 — Punch & Shatter Effect
+        - heading "Key Systems" [level=3] [ref=e576]
+        - text: § § § §
+        - list [ref=e577]:
+          - listitem [ref=e578]:
+            - text: §
+            - strong [ref=e579]: GameManager
+            - text: — a single-scene state machine (Title → Fighting → Choosing → Dying → GameOver)
+          - listitem [ref=e580]:
+            - text: §
+            - strong [ref=e581]: PlayerCombat
+            - text: — a 3-hit combo state machine; an animation-event relay pattern decouples the Animator from the combat code
+          - listitem [ref=e582]:
+            - text: §
+            - strong [ref=e583]: DebrisPool
+            - text: — implemented with index-based object pooling
+          - listitem [ref=e584]:
+            - text: §
+            - strong [ref=e585]: PixelOutlineFeature
+            - text: — a custom URP ScriptableRendererFeature; renders a retro pixel outline via ToonCrack & Dither shaders
+        - link "▸ Play on itch.io" [ref=e275] [cursor=pointer]:
+          - /url: https://j-token.itch.io/break-through
+      - generic [ref=e276]:
+        - heading "§ 5 Web — Abyssal Moonlight" [level=2] [ref=e277]:
+          - generic [ref=e278]: § 5
+          - text: Web — Abyssal Moonlight
+        - paragraph [ref=e586]:
+          - text: An unofficial fansite for the indie game
+          - emphasis [ref=e587]: 深海月光 (Abyssal Moonlight)
+          - text: . It bundles Next.js 16 App Router SSR, dynamic KO/EN/JA multilingual routing, an admin CMS that edits copy & images live per slot, and a Live2D character stage powered by PixiJS and Cubism Core — all in one codebase.
+        - generic [ref=e281]:
+          - generic [ref=e282]: Next.js 16
+          - generic [ref=e283]: React 19
+          - generic [ref=e284]: TypeScript
+          - generic [ref=e285]: Tailwind v4
+          - generic [ref=e286]: PostgreSQL
+          - generic [ref=e287]: Drizzle ORM
+          - generic [ref=e288]: better-auth
+          - generic [ref=e289]: PixiJS · Live2D
+          - generic [ref=e290]: Full-stack
+          - generic [ref=e291]: Railway · Docker
+        - generic [ref=e292]:
+          - figure "Fig. 1 — Hero (ko)" [ref=e293]:
+            - button "Abyssal Moonlight — 한국어(/ko) 메인 히어로 섹션, '심해의 도시, 어비사리아.' 헤드라인과 프롤로그 CTA 버튼" [ref=e294]
+            - generic [ref=e295]: Fig. 1 — Hero (ko)
+          - figure "Fig. 2 — Live2D Stage" [ref=e296]:
+            - button "Abyssal Moonlight — 카렌(Calen) 캐릭터의 Live2D 모델이 메인 스테이지에서 렌더링되는 모습" [ref=e297]
+            - generic [ref=e298]: Fig. 2 — Live2D Stage
+          - figure "Fig. 3 — Characters" [ref=e299]:
+            - button "Abyssal Moonlight — 주요 캐릭터(카렌·시온) 카드가 나열된 Characters 섹션" [ref=e300]
+            - generic [ref=e301]: Fig. 3 — Characters
+          - figure "Fig. 4 — i18n (ja)" [ref=e302]:
+            - button "Abyssal Moonlight — 같은 페이지의 일본어(/ja) 버전, 言語 스위처와 일본어 카피로 다국어 SSR 결과 표시" [ref=e303]
+            - generic [ref=e304]: Fig. 4 — i18n (ja)
+          - figure "Fig. 5 — Admin CMS" [ref=e305]:
+            - button "Abyssal Moonlight — 어드민 CMS 대시보드. Hero 헤드라인·서브라인 등 슬롯별로 한·영·일 다국어 텍스트와 마크다운을 편집하는 카드형 폼이 나열된 화면" [ref=e306]
+            - generic [ref=e307]: Fig. 5 — Admin CMS
+        - heading "Key Systems" [level=3] [ref=e588]
+        - text: § § § § § §
+        - list [ref=e589]:
+          - listitem [ref=e590]:
+            - text: §
+            - strong [ref=e591]: i18n Routing
+            - text: — KO/EN/JA SSR branching via the App Router dynamic segment
+            - code [ref=e592]: app/[locale]/…
+            - text: ", with a language switcher + cookie-based preference storage"
+          - listitem [ref=e593]:
+            - text: §
+            - strong [ref=e594]: Slot-based CMS
+            - text: — a composite PK (
+            - code [ref=e595]: key
+            - text: +
+            - code [ref=e596]: locale
+            - text: ) on the
+            - code [ref=e597]: content
+            - text: table manages multilingual copy · markdown · images · JSON per slot; falls back automatically to
+            - code [ref=e598]: defaultValues
+            - text: in code even when the DB is empty
+          - listitem [ref=e599]:
+            - text: §
+            - strong [ref=e600]: Admin Auth
+            - text: — better-auth email/password + session cookies, with an
+            - code [ref=e601]: ADMIN_EMAILS
+            - text: whitelist guarding admin routes; change history tracked via an
+            - code [ref=e602]: updatedBy
+            - text: FK
+          - listitem [ref=e603]:
+            - text: §
+            - strong [ref=e604]: Live2D Stage
+            - text: — PixiJS v7 +
+            - code [ref=e605]: pixi-live2d-display-mulmotion
+            - text: . Cubism Core can't be redistributed on npm for license reasons, so it's loaded dynamically from a CDN
+          - listitem [ref=e606]:
+            - text: §
+            - strong [ref=e607]: Media Pipeline
+            - text: — admin upload → AWS SDK → Railway Storage (S3-compatible) → public URL → reflected immediately on the next SSR request
+          - listitem [ref=e608]:
+            - text: §
+            - strong [ref=e609]: Deploy
+            - text: — a Node 22-Alpine multi-stage Dockerfile + Next.js standalone output; Railway auto-injects Postgres · Storage env vars
+        - link "▸ View Live Site" [ref=e330] [cursor=pointer]:
+          - /url: https://abyssal-moonlight-production.up.railway.app/ko
+      - generic [ref=e331]:
+        - heading "§ 6 Tech Stack" [level=2] [ref=e332]:
+          - generic [ref=e333]: § 6
+          - text: Tech Stack
+        - generic [ref=e334]:
+          - generic [ref=e335]:
+            - generic [ref=e336]: Languages
+            - generic [ref=e337]:
+              - generic [ref=e338]: TypeScript
+              - generic [ref=e339]: JavaScript
+              - generic [ref=e340]: Python
+              - generic [ref=e341]: Go
+              - generic [ref=e342]: Rust
+              - generic [ref=e343]: C#
+              - generic [ref=e344]: C++
+              - generic [ref=e345]: Dart
+              - generic [ref=e346]: GDScript
+          - generic [ref=e347]:
+            - generic [ref=e348]: Frontend
+            - generic [ref=e349]:
+              - generic [ref=e350]: React
+              - generic [ref=e351]: Next.js
+              - generic [ref=e352]: React Native
+              - generic [ref=e353]: Expo
+              - generic [ref=e354]: SvelteKit
+              - generic [ref=e355]: Flutter
+              - generic [ref=e356]: Tailwind CSS
+              - generic [ref=e357]: Electron
+              - generic [ref=e358]: Tauri
+          - generic [ref=e359]:
+            - generic [ref=e360]: Backend
+            - generic [ref=e361]:
+              - generic [ref=e362]: NestJS
+              - generic [ref=e363]: Node.js
+              - generic [ref=e364]: FastAPI
+              - generic [ref=e365]: Express
+          - generic [ref=e366]:
+            - generic [ref=e367]: Realtime & Protocols
+            - generic [ref=e368]:
+              - generic [ref=e369]: WebRTC (pion)
+              - generic [ref=e370]: LiveKit
+              - generic [ref=e371]: MQTT
+              - generic [ref=e372]: TCP
+              - generic [ref=e373]: WebSocket
+              - generic [ref=e374]: RTSP
+              - generic [ref=e375]: PTZ
+              - generic [ref=e376]: ZeroMQ
+          - generic [ref=e377]:
+            - generic [ref=e378]: Data & Infra
+            - generic [ref=e379]:
+              - generic [ref=e380]: PostgreSQL
+              - generic [ref=e381]: MongoDB
+              - generic [ref=e382]: Supabase
+              - generic [ref=e383]: Drizzle ORM
+              - generic [ref=e384]: AWS
+              - generic [ref=e385]: GCP
+              - generic [ref=e386]: Railway
+              - generic [ref=e387]: Docker
+          - generic [ref=e388]:
+            - generic [ref=e389]: Auth
+            - generic [ref=e390]:
+              - generic [ref=e391]: Better Auth
+              - generic [ref=e392]: Supabase OAuth (Naver / Kakao / Google)
+          - generic [ref=e393]:
+            - generic [ref=e394]: Game & Graphics
+            - generic [ref=e395]:
+              - generic [ref=e396]: Unity 6.3
+              - generic [ref=e397]: URP
+              - generic [ref=e398]: ShaderGraph
+              - generic [ref=e399]: Godot
+              - generic [ref=e400]: WebGPU · WGSL
+              - generic [ref=e401]: Aseprite
+          - generic [ref=e402]:
+            - generic [ref=e403]: AI Tools
+            - generic [ref=e404]:
+              - generic [ref=e405]: Claude
+              - generic [ref=e406]: GPT / Codex
+              - generic [ref=e407]: opencode
+              - generic [ref=e408]: MCP
+              - generic [ref=e409]: SKILL
+          - generic [ref=e410]:
+            - generic [ref=e411]: Voice & Media AI
+            - generic [ref=e412]:
+              - generic [ref=e413]: Pipecat
+              - generic [ref=e414]: Soniox
+              - generic [ref=e415]: Deepgram
+              - generic [ref=e416]: Cartesia
+              - generic [ref=e417]: Gemini
+      - generic [ref=e418]:
+        - heading "§ 7 Contact" [level=2] [ref=e419]:
+          - generic [ref=e420]: § 7
+          - text: Contact
+        - list [ref=e421]:
+          - listitem [ref=e422]:
+            - generic [ref=e423]: Email
+            - link "j.token.2001@gmail.com" [ref=e425] [cursor=pointer]:
+              - /url: mailto:j.token.2001@gmail.com
+          - listitem [ref=e426]:
+            - generic [ref=e427]: GitHub
+            - link "github.com/j-token" [ref=e429] [cursor=pointer]:
+              - /url: https://github.com/j-token
+          - listitem [ref=e430]:
+            - generic [ref=e431]: Blog
+            - link "i-love-coding.tistory.com" [ref=e433] [cursor=pointer]:
+              - /url: https://i-love-coding.tistory.com/
+          - listitem [ref=e434]:
+            - generic [ref=e435]: Game
+            - link "j-token.itch.io/break-through" [ref=e437] [cursor=pointer]:
+              - /url: https://j-token.itch.io/break-through
+        - generic [ref=e438]:
+          - generic [ref=e439]:
+            - generic [ref=e440]: Name
+            - textbox "Name" [ref=e610]
+          - generic [ref=e442]:
+            - generic [ref=e443]: Reply-to email
+            - textbox "Reply-to email" [ref=e611]
+          - generic [ref=e445]:
+            - generic [ref=e446]: Message
+            - textbox "Message" [ref=e612]
+          - button "Send" [ref=e613] [cursor=pointer]
+    - contentinfo [ref=e449]:
+      - generic [ref=e450]: — end of document —
+  - generic [ref=e451]:
+    - generic:
+      - button "📄 텍스트 위주 인쇄 (스크린샷 제외)"
+      - button "🖼️ 스크린샷 포함 전체 인쇄"
+    - button "이력서 인쇄 / PDF 저장" [ref=e452] [cursor=pointer]:
+      - img [ref=e453]
+      - text: 이력서 인쇄 / PDF 저장

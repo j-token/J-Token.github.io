@@ -1,0 +1,571 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - heading "j-token" [level=1] [ref=e5]
+        - generic [ref=e6]: Full-Stack Developer · Portfolio Document
+      - generic [ref=e7]:
+        - group "Language" [ref=e8]:
+          - button "KO" [pressed] [ref=e9] [cursor=pointer]
+          - button "EN" [ref=e10] [cursor=pointer]
+        - generic [ref=e11]: Doc. No. JT-2026-05
+        - text: Revision 03
+    - main [ref=e12]:
+      - generic [ref=e13]:
+        - heading "§ 1 About" [level=2] [ref=e14]:
+          - generic [ref=e15]: § 1
+          - text: About
+        - paragraph [ref=e16]:
+          - text: 문제 해결을 위해
+          - emphasis [ref=e17]: 협업의 가치
+          - text: 와
+          - emphasis [ref=e18]: 기술적 깊이
+          - text: 를 중요하게 생각하는 풀스택 개발자입니다. LLM이 세상에 막 나왔을 때부터 로컬 AI 서비스를 직접 운영해 왔고
+          - text: 요즘은 AI 에이전트 도구를 직접 만드는 일에 몰두하고 있습니다.
+        - paragraph [ref=e19]: 재미있어 보이는 건 참을 수 없습니다.
+        - generic [ref=e20]:
+          - generic [ref=e21]: Disclosure
+          - text: 이 문서에 등장하는 프로젝트 중
+          - strong [ref=e22]:
+            - text: RB-Ware의 로봇 제어 구현(§ 2-4)을 제외한
+            - text: 모든 작업은 AI 코딩 파트너(Claude · GPT · Codex · opencode)와 함께 만들어졌습니다.
+          - text: AI는 제가 가장 잘 쓰는 도구이고, 결과물의 품질과 의사결정에 대한 책임은
+          - strong [ref=e23]: 제가 집니다.
+      - generic [ref=e24]:
+        - heading "§ 2 Interests" [level=2] [ref=e25]:
+          - generic [ref=e26]: § 2
+          - text: Interests
+        - list [ref=e27]:
+          - listitem [ref=e28]:
+            - heading "AI 에이전트 & 로컬 LLM" [level=3] [ref=e29]
+            - paragraph [ref=e30]:
+              - text: 2022년 ChatGPT 등장 이후
+              - strong [ref=e31]: 로컬 LLM × text2sql
+              - text: 서비스를 개인 사업으로 운영.
+              - text: RWKV-4, LLaMA 1·2 등 당시 공개된 모델을 실제 프로덕션에 접목.
+              - generic [ref=e32]:
+                - text: 오픈소스 기여로
+                - code [ref=e33]: alasdairforsythe/tokenmonster
+                - text: (Go SOTA 토크나이저),
+                - code [ref=e34]: backnotprop/plannotator
+                - text: (에이전트 계획·리뷰 도구)에 PR을 보냈고,
+                - text: 최근에는
+                - code [ref=e35]: claude/codex-workflow-kit
+                - text: ","
+                - code [ref=e36]: codex-mcp
+                - text: ","
+                - code [ref=e37]: claude-agent-mcp
+                - text: ","
+                - code [ref=e38]: claude-sync
+                - text: ","
+                - code [ref=e39]: opencode-reviewer
+                - text: ","
+                - code [ref=e40]: email-skills
+                - text: 등 MCP·플러그인 생태계 도구를 직접 제작합니다.
+                - text: Qwen3-8B를 1-bit까지 압축하는
+                - code [ref=e41]: single-bit
+                - text: 양자화 파이프라인도 직접 연구했습니다.
+          - listitem [ref=e42]:
+            - heading "풀스택 TypeScript" [level=3] [ref=e43]
+            - paragraph [ref=e44]:
+              - text: NestJS · React / Next.js · React Native / Expo · SvelteKit.
+              - generic [ref=e45]:
+                - text: 판도플랫폼 Gen AI 베리어프리 키오스크, 엔피엘솔루션 Better Auth 시스템,
+                - text: 플레이모어 아미고 앱 결제·홈페이지 리뉴얼에서 실무 적용.
+          - listitem [ref=e46]:
+            - heading "실시간 통신 & 접근성" [level=3] [ref=e47]
+            - paragraph [ref=e48]:
+              - text: WebRTC · LiveKit · RTSP · PTZ, 그리고 실시간 음성 STT.
+              - generic [ref=e49]:
+                - text: 티와이이엔지에서 Go + WebRTC로 RTSP 카메라 지연 30초 → 1초 단축.
+                - text: 개인 외주 사업으로 pion(Go WebRTC 프레임워크) 기반 rtsp2webrtc 구현 및 PTZ 카메라 원격 제어.
+                - code [ref=e50]: pipecat-call
+                - text: (전화 음성 에이전트),
+                - code [ref=e51]: langCAT
+                - text: (화면공유 실시간 자막) 등 음성·자막 도구도 직접 제작.
+          - listitem [ref=e52]:
+            - heading "협동로봇 & 산업 자동화 Solo Build" [level=3] [ref=e53]:
+              - text: 협동로봇 & 산업 자동화
+              - generic [ref=e54]: Solo Build
+            - paragraph [ref=e55]:
+              - strong [ref=e56]: RB-Ware (한국 협동로봇 용접 자동화 1위, 레인보우로보틱스 파트너)
+              - text: 에서 Flutter로 로봇 조작 앱, Unity로 티칭·시뮬레이션 UI 개발.
+              - generic [ref=e57]:
+                - text: 로봇 ↔ 컨트롤러 간 TCP / MQTT 실시간 통신 프로토콜 직접 구현.
+                - text: 본 포트폴리오에서
+                - strong [ref=e58]: 유일한 AI 비개입 구현
+                - text: .
+          - listitem [ref=e59]:
+            - heading "인증 & OAuth 통합" [level=3] [ref=e60]
+            - paragraph [ref=e61]:
+              - text: Better Auth + NestJS + PostgreSQL 기반 네이버·카카오·구글 연동.
+              - generic [ref=e62]:
+                - text: Supabase 네이버 커스텀 OAuth 프로바이더(
+                - code [ref=e63]: supabase-custom-oauth-test
+                - text: ) 공개.
+          - listitem [ref=e64]:
+            - heading "게임 개발" [level=3] [ref=e65]
+            - paragraph [ref=e66]:
+              - text: Unity 6.3 URP 기반 3D 타이밍 카운터 액션 게임
+              - strong [ref=e67]: Break Through
+              - text: 개발.
+              - generic [ref=e68]:
+                - text: 상세는 § 4 참조. Godot + WebRTC 멀티플레이어 게임(
+                - code [ref=e69]: margin-godot
+                - text: )도 별도 개발 중.
+          - listitem [ref=e70]:
+            - heading "AI × 금융" [level=3] [ref=e71]
+            - paragraph [ref=e72]:
+              - text: FastAPI + AI 자동매매 실험(
+              - code [ref=e73]: Cryptocurrency_with_ai
+              - text: )에서 출발해,
+              - generic [ref=e74]:
+                - text: 차트 패턴·피보나치 분석을 C++20으로 구현한 Bybit 자동매매 시스템
+                - code [ref=e75]: prometheus
+                - text: (ZeroMQ IPC)까지 확장.
+          - listitem [ref=e76]:
+            - heading "네이티브 데스크톱 & 그래픽스" [level=3] [ref=e77]
+            - paragraph [ref=e78]:
+              - text: Tauri v2 · Rust · WebGPU로 크로스플랫폼 데스크톱·그래픽 앱 제작.
+              - generic [ref=e79]:
+                - text: 16,384² 타일 캔버스와 GPU 컴퓨트 셰이더로 구동되는 WebGPU 드로잉 엔진
+                - code [ref=e80]: project-gpu
+                - text: ","
+                - text: 시크릿 마스킹·스냅샷 복원을 갖춘 설정 동기화 앱
+                - code [ref=e81]: claude-sync
+                - text: 등.
+      - generic [ref=e82]:
+        - heading "§ 3 Selected Work" [level=2] [ref=e83]:
+          - generic [ref=e84]: § 3
+          - text: Selected Work
+        - table [ref=e85]:
+          - rowgroup [ref=e86]:
+            - row "Project Role Description" [ref=e87]:
+              - columnheader "Project" [ref=e88]
+              - columnheader "Role" [ref=e89]
+              - columnheader "Description" [ref=e90]
+          - rowgroup [ref=e91]:
+            - row "§ 3-A · AI Agent & Developer Tooling" [ref=e92]:
+              - cell "§ 3-A · AI Agent & Developer Tooling" [ref=e93]
+            - row "claude-workflow-kit / codex-workflow-kit Author Claude Code · Codex용 워크플로우 플러그인 — 거친 요청을 리뷰 가능한 스펙·구현·검증 단계로 전환 (본 포트폴리오도 이 키트로 작업)" [ref=e94]:
+              - cell "claude-workflow-kit / codex-workflow-kit" [ref=e95]:
+                - link "claude-workflow-kit" [ref=e96] [cursor=pointer]:
+                  - /url: https://github.com/j-token/j-token-claude-workflow-kit
+                - text: /
+                - link "codex-workflow-kit" [ref=e97] [cursor=pointer]:
+                  - /url: https://github.com/j-token/j-token-codex-workflow-kit
+              - cell "Author" [ref=e98]
+              - cell "Claude Code · Codex용 워크플로우 플러그인 — 거친 요청을 리뷰 가능한 스펙·구현·검증 단계로 전환 (본 포트폴리오도 이 키트로 작업)" [ref=e99]
+            - row "codex-mcp Author OpenAI Codex SDK 기반 MCP 서버 — ChatGPT OAuth 로그인, API 키 불필요" [ref=e100]:
+              - cell "codex-mcp" [ref=e101]:
+                - link "codex-mcp" [ref=e102] [cursor=pointer]:
+                  - /url: https://github.com/j-token/codex-mcp
+              - cell "Author" [ref=e103]
+              - cell "OpenAI Codex SDK 기반 MCP 서버 — ChatGPT OAuth 로그인, API 키 불필요" [ref=e104]
+            - row "codex-plugin Author Claude Code용 OpenAI Codex 통합 플러그인 (구조화 JSON 출력)" [ref=e105]:
+              - cell "codex-plugin" [ref=e106]:
+                - link "codex-plugin" [ref=e107] [cursor=pointer]:
+                  - /url: https://github.com/j-token/codex-plugin
+              - cell "Author" [ref=e108]
+              - cell "Claude Code용 OpenAI Codex 통합 플러그인 (구조화 JSON 출력)" [ref=e109]
+            - row "claude-agent-mcp Author Claude Agent SDK를 래핑한 MCP 서버 — OAuth 인증, API 키 불필요" [ref=e110]:
+              - cell "claude-agent-mcp" [ref=e111]:
+                - link "claude-agent-mcp" [ref=e112] [cursor=pointer]:
+                  - /url: https://github.com/j-token/claude-agent-mcp
+              - cell "Author" [ref=e113]
+              - cell "Claude Agent SDK를 래핑한 MCP 서버 — OAuth 인증, API 키 불필요" [ref=e114]
+            - row "claude-sync Author Rust · Tauri v2 기반 Claude Code 설정 동기화 — GUI+CLI, 시크릿 자동 마스킹, 스냅샷 복원" [ref=e115]:
+              - cell "claude-sync" [ref=e116]:
+                - link "claude-sync" [ref=e117] [cursor=pointer]:
+                  - /url: https://github.com/j-token/claude-sync
+              - cell "Author" [ref=e118]
+              - cell "Rust · Tauri v2 기반 Claude Code 설정 동기화 — GUI+CLI, 시크릿 자동 마스킹, 스냅샷 복원" [ref=e119]
+            - row "dm-plz Author Telegram / Discord로 Claude Code 알림을 전달하는 MCP" [ref=e120]:
+              - cell "dm-plz" [ref=e121]:
+                - link "dm-plz" [ref=e122] [cursor=pointer]:
+                  - /url: https://github.com/j-token/dm-plz
+              - cell "Author" [ref=e123]
+              - cell "Telegram / Discord로 Claude Code 알림을 전달하는 MCP" [ref=e124]
+            - row "easy-opencode Author opencode를 쉽게 시작하기 위한 LSP + AST-grep 플러그인 번들" [ref=e125]:
+              - cell "easy-opencode" [ref=e126]:
+                - link "easy-opencode" [ref=e127] [cursor=pointer]:
+                  - /url: https://github.com/j-token/easy-opencode
+              - cell "Author" [ref=e128]
+              - cell "opencode를 쉽게 시작하기 위한 LSP + AST-grep 플러그인 번들" [ref=e129]
+            - row "opencode-reviewer Author 마크다운 문서에 드래그+코멘트 피드백을 남기는 VSCode 확장" [ref=e130]:
+              - cell "opencode-reviewer" [ref=e131]:
+                - link "opencode-reviewer" [ref=e132] [cursor=pointer]:
+                  - /url: https://github.com/j-token/opencode-reviewer
+              - cell "Author" [ref=e133]
+              - cell "마크다운 문서에 드래그+코멘트 피드백을 남기는 VSCode 확장" [ref=e134]
+            - row "email-skills Author Email Protocol — AI가 메일함을 POP3 / IMAP으로 읽기전용 검색하는 MCP · 스킬" [ref=e135]:
+              - cell "email-skills" [ref=e136]:
+                - link "email-skills" [ref=e137] [cursor=pointer]:
+                  - /url: https://github.com/j-token/email-skills
+              - cell "Author" [ref=e138]
+              - cell "Email Protocol — AI가 메일함을 POP3 / IMAP으로 읽기전용 검색하는 MCP · 스킬" [ref=e139]
+            - row "media-mcp-agents Author · Private FastMCP + Gemini 기반 오디오 · 비디오 · 이미지 · PDF 분석 MCP 서버" [ref=e140]:
+              - cell "media-mcp-agents" [ref=e141]
+              - cell "Author · Private" [ref=e142]
+              - cell "FastMCP + Gemini 기반 오디오 · 비디오 · 이미지 · PDF 분석 MCP 서버" [ref=e143]
+            - row "§ 3-B · Realtime, Voice & Accessibility" [ref=e144]:
+              - cell "§ 3-B · Realtime, Voice & Accessibility" [ref=e145]
+            - row "pipecat-call Author · Private Pipecat · Soniox · Cartesia 기반 전화 음성 에이전트 서버 (FastAPI, DTMF 키패드 수집)" [ref=e146]:
+              - cell "pipecat-call" [ref=e147]
+              - cell "Author · Private" [ref=e148]
+              - cell "Pipecat · Soniox · Cartesia 기반 전화 음성 에이전트 서버 (FastAPI, DTMF 키패드 수집)" [ref=e149]
+            - row "langCAT Author · Private 화면 공유 오디오를 Deepgram STT + Gemini 번역으로 실시간 이중 자막 표시" [ref=e150]:
+              - cell "langCAT" [ref=e151]
+              - cell "Author · Private" [ref=e152]
+              - cell "화면 공유 오디오를 Deepgram STT + Gemini 번역으로 실시간 이중 자막 표시" [ref=e153]
+            - row "RTA Author · Private Real-Time Audio Translator — Electron + Soniox로 시스템 오디오 실시간 번역 / 자막 오버레이" [ref=e154]:
+              - cell "RTA" [ref=e155]
+              - cell "Author · Private" [ref=e156]
+              - cell "Real-Time Audio Translator — Electron + Soniox로 시스템 오디오 실시간 번역 / 자막 오버레이" [ref=e157]
+            - row "play-tag Author 경도 — Flutter + BLE 기반 오프라인 팀 감지 술래잡기 앱 (Supabase Realtime)" [ref=e158]:
+              - cell "play-tag" [ref=e159]:
+                - link "play-tag" [ref=e160] [cursor=pointer]:
+                  - /url: https://github.com/j-token/play-tag
+              - cell "Author" [ref=e161]
+              - cell "경도 — Flutter + BLE 기반 오프라인 팀 감지 술래잡기 앱 (Supabase Realtime)" [ref=e162]
+            - row "§ 3-C · Graphics, Games & Engines" [ref=e163]:
+              - cell "§ 3-C · Graphics, Games & Engines" [ref=e164]
+            - row "project-gpu · G-Canvas Author · Private WebGPU 드로잉 엔진 — Tauri v2 · Rust · WGSL, 16,384² 타일 캔버스와 GPU 컴퓨트 셰이더" [ref=e165]:
+              - cell "project-gpu · G-Canvas" [ref=e166]
+              - cell "Author · Private" [ref=e167]
+              - cell "WebGPU 드로잉 엔진 — Tauri v2 · Rust · WGSL, 16,384² 타일 캔버스와 GPU 컴퓨트 셰이더" [ref=e168]
+            - row "Break Through Author Unity 6.3 URP 3D 타이밍 카운터 액션 (§ 4 참조)" [ref=e169]:
+              - cell "Break Through" [ref=e170]
+              - cell "Author" [ref=e171]
+              - cell "Unity 6.3 URP 3D 타이밍 카운터 액션 (§ 4 참조)" [ref=e172]
+            - row "margin-godot Author · Private Godot + WebRTC 기반 멀티플레이어 게임 (개발 중)" [ref=e173]:
+              - cell "margin-godot" [ref=e174]
+              - cell "Author · Private" [ref=e175]
+              - cell "Godot + WebRTC 기반 멀티플레이어 게임 (개발 중)" [ref=e176]
+            - row "§ 3-D · AI × Finance" [ref=e177]:
+              - cell "§ 3-D · AI × Finance" [ref=e178]
+            - row "prometheus Author · Private C++20 Bybit 자동매매 시스템 — 차트 패턴 인식 · 피보나치 분석, ZeroMQ IPC, FastAPI" [ref=e179]:
+              - cell "prometheus" [ref=e180]
+              - cell "Author · Private" [ref=e181]
+              - cell "C++20 Bybit 자동매매 시스템 — 차트 패턴 인식 · 피보나치 분석, ZeroMQ IPC, FastAPI" [ref=e182]
+            - row "Cryptocurrency_with_ai Author FastAPI + AI 자동매매 실험" [ref=e183]:
+              - cell "Cryptocurrency_with_ai" [ref=e184]:
+                - link "Cryptocurrency_with_ai" [ref=e185] [cursor=pointer]:
+                  - /url: https://github.com/j-token/Cryptocurrency_with_ai
+              - cell "Author" [ref=e186]
+              - cell "FastAPI + AI 자동매매 실험" [ref=e187]
+            - row "§ 3-E · Web & Apps" [ref=e188]:
+              - cell "§ 3-E · Web & Apps" [ref=e189]
+            - row "Abyssal Moonlight Author Next.js 16 + Live2D + 다국어 CMS를 갖춘 인디 게임 팬사이트 (§ 5 참조)" [ref=e190]:
+              - cell "Abyssal Moonlight" [ref=e191]:
+                - link "Abyssal Moonlight" [ref=e192] [cursor=pointer]:
+                  - /url: https://abyssal-moonlight-production.up.railway.app/ko
+              - cell "Author" [ref=e193]
+              - cell "Next.js 16 + Live2D + 다국어 CMS를 갖춘 인디 게임 팬사이트 (§ 5 참조)" [ref=e194]
+            - row "x-twitter Author Bilibili · Twitter/X 미디어 게시글을 Discord 채널로 자동 포스팅하는 봇 (Node · PostgreSQL)" [ref=e195]:
+              - cell "x-twitter" [ref=e196]:
+                - link "x-twitter" [ref=e197] [cursor=pointer]:
+                  - /url: https://github.com/j-token/x-twitter
+              - cell "Author" [ref=e198]
+              - cell "Bilibili · Twitter/X 미디어 게시글을 Discord 채널로 자동 포스팅하는 봇 (Node · PostgreSQL)" [ref=e199]
+            - row "karaoke · Subkara Author · Private Expo + Supabase 기반 서브컬쳐 노래방 검색 MVP" [ref=e200]:
+              - cell "karaoke · Subkara" [ref=e201]
+              - cell "Author · Private" [ref=e202]
+              - cell "Expo + Supabase 기반 서브컬쳐 노래방 검색 MVP" [ref=e203]
+            - row "extract-text-from-json-by-gjson Author GJSON 표현식으로 JSON에서 원하는 값을 추출해 TXT로 저장하는 Go CLI" [ref=e204]:
+              - cell "extract-text-from-json-by-gjson" [ref=e205]:
+                - link "extract-text-from-json-by-gjson" [ref=e206] [cursor=pointer]:
+                  - /url: https://github.com/j-token/extract-text-from-json-by-gjson
+              - cell "Author" [ref=e207]
+              - cell "GJSON 표현식으로 JSON에서 원하는 값을 추출해 TXT로 저장하는 Go CLI" [ref=e208]
+            - row "supabase-custom-oauth-test Author Supabase 네이버 커스텀 OAuth 프로바이더 샘플" [ref=e209]:
+              - cell "supabase-custom-oauth-test" [ref=e210]:
+                - link "supabase-custom-oauth-test" [ref=e211] [cursor=pointer]:
+                  - /url: https://github.com/j-token/supabase-custom-oauth-test
+              - cell "Author" [ref=e212]
+              - cell "Supabase 네이버 커스텀 OAuth 프로바이더 샘플" [ref=e213]
+            - row "§ 3-F · Research" [ref=e214]:
+              - cell "§ 3-F · Research" [ref=e215]
+            - row "single-bit Author · Private Qwen3-8B 1-bit Post-Training Quantization 파이프라인 연구 — Hadamard rotation · GPTQ · BLoRA" [ref=e216]:
+              - cell "single-bit" [ref=e217]
+              - cell "Author · Private" [ref=e218]
+              - cell "Qwen3-8B 1-bit Post-Training Quantization 파이프라인 연구 — Hadamard rotation · GPTQ · BLoRA" [ref=e219]
+            - row "§ 3-G · Open-source Contributions" [ref=e220]:
+              - cell "§ 3-G · Open-source Contributions" [ref=e221]
+            - row "alasdairforsythe/tokenmonster Contributor (PR) Go 기반 SOTA 토크나이저 — 로컬 LLM × text2sql 시기 기여" [ref=e222]:
+              - cell "alasdairforsythe/tokenmonster" [ref=e223]:
+                - link "alasdairforsythe/tokenmonster" [ref=e224] [cursor=pointer]:
+                  - /url: https://github.com/alasdairforsythe/tokenmonster
+              - cell "Contributor (PR)" [ref=e225]
+              - cell "Go 기반 SOTA 토크나이저 — 로컬 LLM × text2sql 시기 기여" [ref=e226]
+            - row "backnotprop/plannotator Contributor (PR) AI 코딩 에이전트 계획·코드 리뷰 도구" [ref=e227]:
+              - cell "backnotprop/plannotator" [ref=e228]:
+                - link "backnotprop/plannotator" [ref=e229] [cursor=pointer]:
+                  - /url: https://github.com/backnotprop/plannotator
+              - cell "Contributor (PR)" [ref=e230]
+              - cell "AI 코딩 에이전트 계획·코드 리뷰 도구" [ref=e231]
+            - row "pi-web-providers Contributor pi 에이전트용 멀티 프로바이더 웹 확장 — search · contents · answer · research 라우팅" [ref=e232]:
+              - cell "pi-web-providers" [ref=e233]:
+                - link "pi-web-providers" [ref=e234] [cursor=pointer]:
+                  - /url: https://github.com/j-token/pi-web-providers
+              - cell "Contributor" [ref=e235]
+              - cell "pi 에이전트용 멀티 프로바이더 웹 확장 — search · contents · answer · research 라우팅" [ref=e236]
+      - generic [ref=e237]:
+        - heading "§ 4 Game — Break Through" [level=2] [ref=e238]:
+          - generic [ref=e239]: § 4
+          - text: Game — Break Through
+        - paragraph [ref=e240]: Unity 6.3 URP 기반 3D 타이밍 카운터 액션 게임. 흑백 픽셀 아웃라인 스타일을 커스텀 셰이더로 구현했습니다.
+        - generic [ref=e241]:
+          - generic [ref=e242]: Unity 6.3
+          - generic [ref=e243]: URP
+          - generic [ref=e244]: C#
+          - generic [ref=e245]: ShaderGraph
+          - generic [ref=e246]: Aseprite
+          - generic [ref=e247]: Action
+          - generic [ref=e248]: HTML5
+        - generic [ref=e249]:
+          - figure "Fig. 1 — Title Screen" [ref=e250]:
+            - button "Break Through — 타이틀 화면, BREAK THROUGH 로고와 START 버튼, 기본 자세의 플레이어 캐릭터" [ref=e251]
+            - generic [ref=e252]: Fig. 1 — Title Screen
+          - figure "Fig. 2 — Round Start" [ref=e253]:
+            - button "Break Through — ROUND 1 오버레이 아래에서 플레이어가 적과 대치하는 장면" [ref=e254]
+            - generic [ref=e255]: Fig. 2 — Round Start
+          - figure "Fig. 3 — Combat & Debris" [ref=e256]:
+            - button "Break Through — 실제 전투 장면, 실루엣 플레이어가 파편을 흩뿌리며 이동" [ref=e257]
+            - generic [ref=e258]: Fig. 3 — Combat & Debris
+          - figure "Fig. 4 — Game Over" [ref=e259]:
+            - button "Break Through — GAME OVER, REACHED ROUND 1 텍스트와 RESTART 버튼" [ref=e260]
+            - generic [ref=e261]: Fig. 4 — Game Over
+          - figure "Fig. 5 — Punch & Shatter Effect" [ref=e262]:
+            - button "Break Through — 플레이어가 펀치를 내지르며 오브젝트 파편이 비산하는 장면" [ref=e263]
+            - generic [ref=e264]: Fig. 5 — Punch & Shatter Effect
+        - heading "주요 시스템" [level=3] [ref=e265]
+        - list [ref=e266]:
+          - listitem [ref=e267]:
+            - text: §
+            - strong [ref=e268]: GameManager
+            - text: — 단일 씬 상태머신 (Title → Fighting → Choosing → Dying → GameOver)
+          - listitem [ref=e269]:
+            - text: §
+            - strong [ref=e270]: PlayerCombat
+            - text: — 3단 콤보 상태머신, 애니메이션 이벤트 릴레이 패턴으로 Animator ↔ 전투 코드 분리
+          - listitem [ref=e271]:
+            - text: §
+            - strong [ref=e272]: DebrisPool
+            - text: — 인덱스 기반 오브젝트 풀링으로 구현
+          - listitem [ref=e273]:
+            - text: §
+            - strong [ref=e274]: PixelOutlineFeature
+            - text: — 커스텀 URP ScriptableRendererFeature. ToonCrack·Dither 셰이더로 레트로 픽셀 아웃라인 렌더링
+        - text: § § § §
+        - link "▸ Play on itch.io" [ref=e275] [cursor=pointer]:
+          - /url: https://j-token.itch.io/break-through
+      - generic [ref=e276]:
+        - heading "§ 5 Web — Abyssal Moonlight" [level=2] [ref=e277]:
+          - generic [ref=e278]: § 5
+          - text: Web — Abyssal Moonlight
+        - paragraph [ref=e279]:
+          - text: 인디 게임
+          - emphasis [ref=e280]: 深海月光 (Abyssal Moonlight)
+          - text: 의 비공식 팬사이트. Next.js 16 App Router 기반 SSR, 한·영·일 다국어 동적 라우팅, 슬롯 단위로 카피·이미지를 실시간 편집하는 어드민 CMS, PixiJS와 Cubism Core로 구동되는 Live2D 캐릭터 스테이지를 한 코드베이스에 묶었습니다.
+        - generic [ref=e281]:
+          - generic [ref=e282]: Next.js 16
+          - generic [ref=e283]: React 19
+          - generic [ref=e284]: TypeScript
+          - generic [ref=e285]: Tailwind v4
+          - generic [ref=e286]: PostgreSQL
+          - generic [ref=e287]: Drizzle ORM
+          - generic [ref=e288]: better-auth
+          - generic [ref=e289]: PixiJS · Live2D
+          - generic [ref=e290]: Full-stack
+          - generic [ref=e291]: Railway · Docker
+        - generic [ref=e292]:
+          - figure "Fig. 1 — Hero (ko)" [ref=e293]:
+            - button "Abyssal Moonlight — 한국어(/ko) 메인 히어로 섹션, '심해의 도시, 어비사리아.' 헤드라인과 프롤로그 CTA 버튼" [ref=e294]
+            - generic [ref=e295]: Fig. 1 — Hero (ko)
+          - figure "Fig. 2 — Live2D Stage" [ref=e296]:
+            - button "Abyssal Moonlight — 카렌(Calen) 캐릭터의 Live2D 모델이 메인 스테이지에서 렌더링되는 모습" [ref=e297]
+            - generic [ref=e298]: Fig. 2 — Live2D Stage
+          - figure "Fig. 3 — Characters" [ref=e299]:
+            - button "Abyssal Moonlight — 주요 캐릭터(카렌·시온) 카드가 나열된 Characters 섹션" [ref=e300]
+            - generic [ref=e301]: Fig. 3 — Characters
+          - figure "Fig. 4 — i18n (ja)" [ref=e302]:
+            - button "Abyssal Moonlight — 같은 페이지의 일본어(/ja) 버전, 言語 스위처와 일본어 카피로 다국어 SSR 결과 표시" [ref=e303]
+            - generic [ref=e304]: Fig. 4 — i18n (ja)
+          - figure "Fig. 5 — Admin CMS" [ref=e305]:
+            - button "Abyssal Moonlight — 어드민 CMS 대시보드. Hero 헤드라인·서브라인 등 슬롯별로 한·영·일 다국어 텍스트와 마크다운을 편집하는 카드형 폼이 나열된 화면" [ref=e306]
+            - generic [ref=e307]: Fig. 5 — Admin CMS
+        - heading "주요 시스템" [level=3] [ref=e308]
+        - list [ref=e309]:
+          - listitem [ref=e310]:
+            - text: §
+            - strong [ref=e311]: i18n Routing
+            - text: — App Router 동적 세그먼트
+            - code [ref=e312]: app/[locale]/…
+            - text: 로 한·영·일 SSR 분기, 언어 스위처 + 쿠키 기반 선호도 저장
+          - listitem [ref=e313]:
+            - text: §
+            - strong [ref=e314]: Slot-based CMS
+            - text: —
+            - code [ref=e315]: content
+            - text: 테이블 복합 PK (
+            - code [ref=e316]: key
+            - text: +
+            - code [ref=e317]: locale
+            - text: )로 다국어 카피·마크다운·이미지·JSON을 슬롯 단위로 관리. DB가 비어 있어도 코드의
+            - code [ref=e318]: defaultValues
+            - text: 로 자동 폴백
+          - listitem [ref=e319]:
+            - text: §
+            - strong [ref=e320]: Admin Auth
+            - text: — better-auth 이메일·비밀번호 + 세션 쿠키,
+            - code [ref=e321]: ADMIN_EMAILS
+            - text: 화이트리스트로 어드민 라우트 가드. 변경 이력은
+            - code [ref=e322]: updatedBy
+            - text: FK로 추적
+          - listitem [ref=e323]:
+            - text: §
+            - strong [ref=e324]: Live2D Stage
+            - text: — PixiJS v7 +
+            - code [ref=e325]: pixi-live2d-display-mulmotion
+            - text: . Cubism Core는 라이선스상 npm 재배포 불가이므로 CDN 동적 로드
+          - listitem [ref=e326]:
+            - text: §
+            - strong [ref=e327]: Media Pipeline
+            - text: — 어드민 업로드 → AWS SDK → Railway Storage(S3 호환) → 공개 URL → SSR 다음 요청부터 즉시 반영
+          - listitem [ref=e328]:
+            - text: §
+            - strong [ref=e329]: Deploy
+            - text: — Node 22-Alpine 멀티스테이지 Dockerfile + Next.js standalone 출력, Railway에서 Postgres·Storage 환경변수 자동 주입
+        - text: § § § § § §
+        - link "▸ View Live Site" [ref=e330] [cursor=pointer]:
+          - /url: https://abyssal-moonlight-production.up.railway.app/ko
+      - generic [ref=e331]:
+        - heading "§ 6 Tech Stack" [level=2] [ref=e332]:
+          - generic [ref=e333]: § 6
+          - text: Tech Stack
+        - generic [ref=e334]:
+          - generic [ref=e335]:
+            - generic [ref=e336]: Languages
+            - generic [ref=e337]:
+              - generic [ref=e338]: TypeScript
+              - generic [ref=e339]: JavaScript
+              - generic [ref=e340]: Python
+              - generic [ref=e341]: Go
+              - generic [ref=e342]: Rust
+              - generic [ref=e343]: C#
+              - generic [ref=e344]: C++
+              - generic [ref=e345]: Dart
+              - generic [ref=e346]: GDScript
+          - generic [ref=e347]:
+            - generic [ref=e348]: Frontend
+            - generic [ref=e349]:
+              - generic [ref=e350]: React
+              - generic [ref=e351]: Next.js
+              - generic [ref=e352]: React Native
+              - generic [ref=e353]: Expo
+              - generic [ref=e354]: SvelteKit
+              - generic [ref=e355]: Flutter
+              - generic [ref=e356]: Tailwind CSS
+              - generic [ref=e357]: Electron
+              - generic [ref=e358]: Tauri
+          - generic [ref=e359]:
+            - generic [ref=e360]: Backend
+            - generic [ref=e361]:
+              - generic [ref=e362]: NestJS
+              - generic [ref=e363]: Node.js
+              - generic [ref=e364]: FastAPI
+              - generic [ref=e365]: Express
+          - generic [ref=e366]:
+            - generic [ref=e367]: Realtime & Protocols
+            - generic [ref=e368]:
+              - generic [ref=e369]: WebRTC (pion)
+              - generic [ref=e370]: LiveKit
+              - generic [ref=e371]: MQTT
+              - generic [ref=e372]: TCP
+              - generic [ref=e373]: WebSocket
+              - generic [ref=e374]: RTSP
+              - generic [ref=e375]: PTZ
+              - generic [ref=e376]: ZeroMQ
+          - generic [ref=e377]:
+            - generic [ref=e378]: Data & Infra
+            - generic [ref=e379]:
+              - generic [ref=e380]: PostgreSQL
+              - generic [ref=e381]: MongoDB
+              - generic [ref=e382]: Supabase
+              - generic [ref=e383]: Drizzle ORM
+              - generic [ref=e384]: AWS
+              - generic [ref=e385]: GCP
+              - generic [ref=e386]: Railway
+              - generic [ref=e387]: Docker
+          - generic [ref=e388]:
+            - generic [ref=e389]: Auth
+            - generic [ref=e390]:
+              - generic [ref=e391]: Better Auth
+              - generic [ref=e392]: Supabase OAuth (Naver / Kakao / Google)
+          - generic [ref=e393]:
+            - generic [ref=e394]: Game & Graphics
+            - generic [ref=e395]:
+              - generic [ref=e396]: Unity 6.3
+              - generic [ref=e397]: URP
+              - generic [ref=e398]: ShaderGraph
+              - generic [ref=e399]: Godot
+              - generic [ref=e400]: WebGPU · WGSL
+              - generic [ref=e401]: Aseprite
+          - generic [ref=e402]:
+            - generic [ref=e403]: AI Tools
+            - generic [ref=e404]:
+              - generic [ref=e405]: Claude
+              - generic [ref=e406]: GPT / Codex
+              - generic [ref=e407]: opencode
+              - generic [ref=e408]: MCP
+              - generic [ref=e409]: SKILL
+          - generic [ref=e410]:
+            - generic [ref=e411]: Voice & Media AI
+            - generic [ref=e412]:
+              - generic [ref=e413]: Pipecat
+              - generic [ref=e414]: Soniox
+              - generic [ref=e415]: Deepgram
+              - generic [ref=e416]: Cartesia
+              - generic [ref=e417]: Gemini
+      - generic [ref=e418]:
+        - heading "§ 7 Contact" [level=2] [ref=e419]:
+          - generic [ref=e420]: § 7
+          - text: Contact
+        - list [ref=e421]:
+          - listitem [ref=e422]:
+            - generic [ref=e423]: Email
+            - link "j.token.2001@gmail.com" [ref=e425] [cursor=pointer]:
+              - /url: mailto:j.token.2001@gmail.com
+          - listitem [ref=e426]:
+            - generic [ref=e427]: GitHub
+            - link "github.com/j-token" [ref=e429] [cursor=pointer]:
+              - /url: https://github.com/j-token
+          - listitem [ref=e430]:
+            - generic [ref=e431]: Blog
+            - link "i-love-coding.tistory.com" [ref=e433] [cursor=pointer]:
+              - /url: https://i-love-coding.tistory.com/
+          - listitem [ref=e434]:
+            - generic [ref=e435]: Game
+            - link "j-token.itch.io/break-through" [ref=e437] [cursor=pointer]:
+              - /url: https://j-token.itch.io/break-through
+        - generic [ref=e438]:
+          - generic [ref=e439]:
+            - generic [ref=e440]: 이름
+            - textbox "이름" [ref=e441]
+          - generic [ref=e442]:
+            - generic [ref=e443]: 수신 이메일
+            - textbox "수신 이메일" [ref=e444]
+          - generic [ref=e445]:
+            - generic [ref=e446]: 메시지
+            - textbox "메시지" [ref=e447]
+          - button "보내기" [ref=e448] [cursor=pointer]
+    - contentinfo [ref=e449]:
+      - generic [ref=e450]: — end of document —
+  - generic [ref=e451]:
+    - generic:
+      - button "📄 텍스트 위주 인쇄 (스크린샷 제외)"
+      - button "🖼️ 스크린샷 포함 전체 인쇄"
+    - button "이력서 인쇄 / PDF 저장" [ref=e452] [cursor=pointer]:
+      - img [ref=e453]
+      - text: 이력서 인쇄 / PDF 저장

@@ -1,0 +1,56 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "深海月光 — Abyssal Moonlight prologue 픽셀 아트 × Live2D 심해 비주얼 노벨" [ref=e4] [cursor=pointer]:
+        - /url: /ko
+        - generic [ref=e5]: 深海月光 — Abyssal Moonlight prologue
+        - generic [ref=e6]: 픽셀 아트 × Live2D 심해 비주얼 노벨
+      - generic [ref=e7]:
+        - navigation [ref=e8]:
+          - link "STORY" [ref=e9] [cursor=pointer]:
+            - /url: /ko#story
+          - generic [ref=e10]: ·
+          - link "CHARS" [ref=e11] [cursor=pointer]:
+            - /url: /ko#characters
+          - generic [ref=e12]: ·
+          - link "GALLERY" [ref=e13] [cursor=pointer]:
+            - /url: /ko#gallery
+        - generic [ref=e14]:
+          - generic [ref=e15]: "언어:"
+          - generic [ref=e16]:
+            - link "한국어" [ref=e17] [cursor=pointer]:
+              - /url: /ko/signin
+            - generic [ref=e18]: ·
+          - generic [ref=e19]:
+            - link "English" [ref=e20] [cursor=pointer]:
+              - /url: /en/signin
+            - generic [ref=e21]: ·
+          - link "日本語" [ref=e23] [cursor=pointer]:
+            - /url: /ja/signin
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - heading "CMS LOGIN" [level=1] [ref=e26]
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - generic [ref=e29]: 이메일
+          - textbox [ref=e30]
+        - generic [ref=e31]:
+          - generic [ref=e32]: 비밀번호
+          - textbox [ref=e33]
+          - paragraph [ref=e34]: 최소 8자.
+        - button "로그인" [ref=e35] [cursor=pointer]
+        - button "계정이 없다면 가입하기" [ref=e36]
+      - paragraph [ref=e37]: ADMIN_EMAILS 환경변수에 등록된 이메일만 CMS 에 접근할 수 있습니다.
+  - contentinfo [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e40]: © Garurai
+      - generic [ref=e41]: 深海月光
+    - generic [ref=e42]:
+      - text: "Pixel fonts:"
+      - link "Fusion Pixel Font" [ref=e43] [cursor=pointer]:
+        - /url: https://github.com/TakWolf/fusion-pixel-font
+      - text: © TakWolf, including Galmuri © quiple, Ark Pixel © TakWolf, Cubic 11 © ACh-K — licensed under
+      - link "SIL Open Font License 1.1" [ref=e44] [cursor=pointer]:
+        - /url: https://openfontlicense.org/
+      - text: .
+  - alert [ref=e45]

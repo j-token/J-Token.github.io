@@ -1,0 +1,88 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "深海月光 — Abyssal Moonlight prologue 픽셀 아트 × Live2D 심해 비주얼 노벨" [ref=e4] [cursor=pointer]:
+        - /url: /ko
+        - generic [ref=e5]: 深海月光 — Abyssal Moonlight prologue
+        - generic [ref=e6]: 픽셀 아트 × Live2D 심해 비주얼 노벨
+      - generic [ref=e7]:
+        - navigation [ref=e8]:
+          - link "STORY" [ref=e9] [cursor=pointer]:
+            - /url: /ko#story
+          - generic [ref=e10]: ·
+          - link "CHARS" [ref=e11] [cursor=pointer]:
+            - /url: /ko#characters
+          - generic [ref=e12]: ·
+          - link "GALLERY" [ref=e13] [cursor=pointer]:
+            - /url: /ko#gallery
+        - generic [ref=e14]:
+          - generic [ref=e15]: "언어:"
+          - generic [ref=e16]:
+            - link "한국어" [ref=e17] [cursor=pointer]:
+              - /url: /ko
+            - generic [ref=e18]: ·
+          - generic [ref=e19]:
+            - link "English" [ref=e20] [cursor=pointer]:
+              - /url: /en
+            - generic [ref=e21]: ·
+          - link "日本語" [ref=e23] [cursor=pointer]:
+            - /url: /ja
+  - main [ref=e24]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - paragraph [ref=e28]: 深海月光 — Abyssal Moonlight
+        - heading "심해의 도시, 어비사리아." [level=1] [ref=e29]
+        - paragraph [ref=e30]: 어인이 되지 못한 자들의 어둠 속에서, 단 한 사람을 위해 살아가는 이야기.
+        - generic [ref=e31]:
+          - link "▶ 프롤로그 보러 가기" [ref=e32] [cursor=pointer]:
+            - /url: https://garurai.itch.io/abyssalmoonlightprologue
+          - link "스토리 보기" [ref=e33] [cursor=pointer]:
+            - /url: /ko#story
+      - generic [ref=e34]:
+        - img "Calen" [ref=e37]
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: CALEN — LIVE2D
+          - paragraph [ref=e40]: 마우스를 움직이면 시선이 따라옵니다.
+    - generic [ref=e42]:
+      - heading "STORY" [level=2] [ref=e43]
+      - article [ref=e44]:
+        - generic [ref=e45]:
+          - paragraph [ref=e46]: 어인으로의 변이를 살 수 없었던 이들은 번호를 부여받고 깊은 어둠 속에서 일한다.
+          - paragraph [ref=e47]:
+            - text: 거의 아무것도 느끼지 못하는 소년
+            - strong [ref=e48]: 시온 (Shion)
+            - text: 과, 그가 유일하게 살아가는 이유인
+            - strong [ref=e49]: 카렌 (Calen)
+            - text: 의 이야기.
+    - generic [ref=e51]:
+      - heading "CHARACTERS" [level=2] [ref=e52]
+      - generic [ref=e53]:
+        - article [ref=e54]:
+          - img "카렌 (Calen)" [ref=e56]
+          - generic [ref=e57]:
+            - heading "카렌 (Calen)" [level=3] [ref=e58]
+            - paragraph [ref=e60]: 시온의 곁에 있어주는 단 한 사람. 무감각해진 그가 "살아가는 이유" 라고 부르는 존재.
+        - article [ref=e61]:
+          - img "시온 (Shion)" [ref=e63]
+          - generic [ref=e64]:
+            - heading "시온 (Shion)" [level=3] [ref=e65]
+            - paragraph [ref=e67]: 어인이 되지 못한 채 번호로 불리는 노동자. 거의 아무것도 느끼지 못하지만, 카렌만이 예외다.
+    - generic [ref=e69]:
+      - heading "GALLERY" [level=2] [ref=e70]
+      - generic [ref=e71]:
+        - img "gallery.image1" [ref=e73]
+        - img "gallery.image2" [ref=e75]
+        - img "gallery.image3" [ref=e77]
+  - contentinfo [ref=e78]:
+    - generic [ref=e79]:
+      - generic [ref=e80]: © Garurai
+      - generic [ref=e81]: 深海月光
+    - generic [ref=e82]:
+      - text: "Pixel fonts:"
+      - link "Fusion Pixel Font" [ref=e83] [cursor=pointer]:
+        - /url: https://github.com/TakWolf/fusion-pixel-font
+      - text: © TakWolf, including Galmuri © quiple, Ark Pixel © TakWolf, Cubic 11 © ACh-K — licensed under
+      - link "SIL Open Font License 1.1" [ref=e84] [cursor=pointer]:
+        - /url: https://openfontlicense.org/
+      - text: .
+  - alert [ref=e85]
